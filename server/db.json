@@ -1,0 +1,106 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Адміністратор застосунку",
+      "email": "admin@gmail.com",
+      "login": "Admin",
+      "password": "Flhtyfkby21987",
+      "status": "admin",
+      "statusWork": "active",
+      "uniquePassword": "Adrksfjl32-/]'"
+    },
+    {
+      "id": "2",
+      "name": "Максим Бард",
+      "email": "maxim@gmail.com",
+      "login": "max-dorn",
+      "password": "Flhtyfkby21987",
+      "status": "user",
+      "statusWork": "",
+      "uniquePassword": ""
+    }
+  ],
+  "products": [
+    {
+      "name": "Капрічоза",
+      "category": "pizza",
+      "proteins": "13",
+      "carbohydrates": "26.6",
+      "fats": "6.8",
+      "caloricContent": "224",
+      "size": "30",
+      "weight": "440",
+      "price": "240",
+      "description": "соус томатний, сир моцарела, шинка, свіжі гриби",
+      "imagePath": "https://la.ua/wp-content/uploads/2021/08/kaprichoza.jpg",
+      "id": "UqN-x6JJPE0"
+    },
+    {
+      "name": "Антоніо",
+      "category": "pizza-romana",
+      "proteins": "10.3",
+      "carbohydrates": "28.6",
+      "fats": "8",
+      "caloricContent": "224",
+      "size": "30",
+      "weight": "485",
+      "price": "190",
+      "description": "соус томатний, сир моцарела, шинка, салямі, гриби печериці",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/03/antonio.png",
+      "id": "OQUrolPfig0"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Піца",
+      "path": "pizza",
+      "id": "Vz5tJUrOHWg"
+    },
+    {
+      "name": "PizzaRomana",
+      "path": "pizza-romana",
+      "id": "lW3xCu5JZW8"
+    },
+    {
+      "name": "Азія",
+      "path": "asian",
+      "id": "WoYcpgQHNtY"
+    }
+  ],
+  "discounts": [
+    {
+      "name": "Сет тижня",
+      "title": "Сет тижня",
+      "path": "set-tyzhnya",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/09/set-miks-baner-lviv-1.jpg",
+      "description": "Акція «Сет тижня» – Сет мікс за 1020 грн 700 грн лише 11 – 17 травня включно в місті Львів.",
+      "id": "1JM4c1BIjaM"
+    },
+    {
+      "name": "Акція Кожна друга піца -70%",
+      "title": "Акція Кожна друга піца -70%",
+      "path": "70-kozhna-druga-pizza",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/09/70-baner.jpg",
+      "description": "Акція «Кожна друга піца -70%» діє в середу тільки на піци LA П’ЄЦ. Замовляйте одну піцу та отримуйте -70% на другу піцу!\n\n* -70% застосовуються на піцу з найменшою вартістю.\n** Ця акція не поєднується з іншими акціями.\n\nАкція діє з 25.02.2026 до 31.12.2026.",
+      "id": "qMzOUlmxJ_c"
+    },
+    {
+      "name": "Акція “2+1”",
+      "title": "Акція “2+1”",
+      "path": "nasha-firmova-aktsiya-2-1",
+      "imagePath": "https://la.ua/wp-content/uploads/2021/08/2-1-try-dni.jpg",
+      "description": "Акція «2+1» діє в понеділок, вівторок та четвер тільки на піци LA П’ЄЦ. Замовляйте дві піци та отримуйте ще одну безкоштовно!\n\n* Безкоштовною вважається піца з найменшою вартістю.\n** Ця акція не поєднується з іншими акціями та працює лише на доставку та самовивіз.\n\nАкція діє з 01.01.2026 до 31.12.2026.",
+      "id": "3xQxjasvJzo"
+    },
+    {
+      "name": "Акція “3+1”",
+      "title": "Акція “3+1”",
+      "path": "nasha-firmova-aktsiya-3-1",
+      "imagePath": "https://la.ua/wp-content/uploads/2021/08/31.jpg",
+      "description": "Акція «3+1» діє в п’ятницю, суботу та неділю лише на піци LA П’ЄЦ. Замовляйте три піци та отримуйте ще одну безкоштовно!\n\n* Безкоштовною вважається піца з найменшою вартістю.\n** Ця акція не поєднується з іншими акціями та працює лише на доставку та самовивіз.\n\nАкція діє з 01.01.2026 до 31.12.2026.",
+      "id": "xxV_gqpWUGI"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
