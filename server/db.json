@@ -21,20 +21,62 @@
       "uniquePassword": ""
     }
   ],
+  "active": [
+    {
+      "login": "Admin",
+      "password": "Flhtyfkby21987",
+      "status": "admin",
+      "id": 1
+    },
+    {
+      "login": "Admin",
+      "password": "Flhtyfkby21987",
+      "status": "admin",
+      "id": 2
+    }
+  ],
   "products": [
     {
       "name": "Капрічоза",
       "category": "pizza",
       "proteins": "13",
       "carbohydrates": "26.6",
-      "fats": "6.8",
+      "fats": "6.9",
       "caloricContent": "224",
       "size": "30",
-      "weight": "440",
+      "weight": "450",
       "price": "240",
-      "description": "соус томатний, сир моцарела, шинка, свіжі гриби",
+      "description": "соус томатний, сир моцарела, шинка, свіжі гриби!",
       "imagePath": "https://la.ua/wp-content/uploads/2021/08/kaprichoza.jpg",
       "id": "UqN-x6JJPE0"
+    },
+    {
+      "name": "Салямі",
+      "category": "pizza",
+      "proteins": "14.1",
+      "carbohydrates": "29.7",
+      "fats": "9.8",
+      "caloricContent": "268",
+      "size": "30",
+      "weight": "400",
+      "price": "240",
+      "description": "соус томатний, сир моцарела, ковбаса салямі",
+      "imagePath": "https://la.ua/wp-content/uploads/2021/08/salami.jpg",
+      "id": "lQk60_U"
+    },
+    {
+      "name": "Кватро Формаджі",
+      "category": "pizza",
+      "proteins": "16.3",
+      "carbohydrates": "29.9",
+      "fats": "13.2",
+      "caloricContent": "308",
+      "size": "30",
+      "weight": "410",
+      "price": "340",
+      "description": "соус бешамель, сир моцарела, сир лазур, моцарела міні, груша, волоський горіх, пармезан",
+      "imagePath": "https://la.ua/wp-content/uploads/2021/08/kvafrik2.jpg",
+      "id": "4dtyvID"
     },
     {
       "name": "Антоніо",
@@ -48,24 +90,191 @@
       "price": "190",
       "description": "соус томатний, сир моцарела, шинка, салямі, гриби печериці",
       "imagePath": "https://la.ua/wp-content/uploads/2025/03/antonio.png",
-      "id": "OQUrolPfig0"
+      "id": "b-JsA2p"
+    },
+    {
+      "name": "Салат з буряка",
+      "category": "salad",
+      "proteins": "1.5",
+      "carbohydrates": "2.3",
+      "fats": "6.6",
+      "caloricContent": "69",
+      "size": "",
+      "weight": "150",
+      "price": "100",
+      "description": "буряк, цибуля, оцет, олія соняшникова",
+      "imagePath": "https://la.ua/wp-content/uploads/2026/05/salat-z-buryachka.jpg",
+      "id": "yiUaO7v"
+    },
+    {
+      "name": "Салат з капусти та огірка",
+      "category": "salad",
+      "proteins": "0.8",
+      "carbohydrates": "3.9",
+      "fats": "5",
+      "caloricContent": "59",
+      "size": "",
+      "weight": "100",
+      "price": "100",
+      "description": "капуста, огірок, лимонний сік, оливкова олія, кріп, петрушка",
+      "imagePath": "https://la.ua/wp-content/uploads/2026/04/salat-z-kapusty-ta-ogirka.jpg",
+      "id": "C3OJ_QE"
+    },
+    {
+      "name": "Егейський",
+      "category": "salad",
+      "proteins": "0.9",
+      "carbohydrates": "5.4",
+      "fats": "5",
+      "caloricContent": "71",
+      "size": "",
+      "weight": "150",
+      "price": "110",
+      "description": "помідор, огірок, оливки, перець болгарський, цибуля синя, сир фета, медово-гірчичний соус, мікс салату",
+      "imagePath": "https://la.ua/wp-content/uploads/2024/05/egejskyj-1.jpg",
+      "id": "xfMQ9Cj"
+    },
+    {
+      "name": "Феста",
+      "category": "salad",
+      "proteins": "1.8",
+      "carbohydrates": "7.5",
+      "fats": "8.6",
+      "caloricContent": "124",
+      "size": "",
+      "weight": "150",
+      "price": "120",
+      "description": "мікс салату, буряк відварний, сир фета, горіх грецький, авокадо, медово-гірчичний соус",
+      "imagePath": "https://la.ua/wp-content/uploads/2024/05/festa.jpg",
+      "id": "g3IgGd-"
+    },
+    {
+      "name": "Цезаріо",
+      "category": "pizza",
+      "proteins": "14.7",
+      "carbohydrates": "20.7",
+      "fats": "13",
+      "caloricContent": "262",
+      "size": "30",
+      "weight": "570",
+      "price": "380",
+      "description": "соус бешамель, сир моцарела, хрусткий салат, куряче м'ясо, перепелині яйця, помідори, соус \"Цезар\" (містить часник), пармезан",
+      "imagePath": "https://la.ua/wp-content/uploads/2021/08/czezario.jpg",
+      "id": "hqZ1ucl"
+    },
+    {
+      "name": "Маргарита",
+      "category": "pizza",
+      "proteins": "11.7",
+      "carbohydrates": "29.8",
+      "fats": "6.8",
+      "caloricContent": "232",
+      "size": "30",
+      "weight": "400",
+      "price": "175",
+      "description": "соус томатний, сир моцарела, помідори",
+      "imagePath": "https://la.ua/wp-content/uploads/2021/08/margaryta4.jpg",
+      "id": "08V4j2F"
+    },
+    {
+      "name": "Shabo Original Collection біле",
+      "category": "alcohol-drink",
+      "proteins": "",
+      "carbohydrates": "",
+      "fats": "",
+      "caloricContent": "",
+      "size": "",
+      "weight": "",
+      "price": "295",
+      "description": "біле, напівсолодке, вміст алкоголю: 11,7%, Україна, Одеська обл.",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/07/shabo-original-collection-bile.jpg",
+      "id": "NiesEM3"
     }
   ],
   "categories": [
     {
       "name": "Піца",
       "path": "pizza",
-      "id": "Vz5tJUrOHWg"
+      "imagePath": "https://la.ua/wp-content/uploads/2024/05/pizza.jpg",
+      "id": 1
     },
     {
-      "name": "PizzaRomana",
-      "path": "pizza-romana",
-      "id": "lW3xCu5JZW8"
+      "name": "Салати",
+      "path": "salad",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/05/salads4.jpg",
+      "id": 2
+    },
+    {
+      "name": "Суші",
+      "path": "sushi",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/08/sushi8.jpg",
+      "id": 3
     },
     {
       "name": "Азія",
       "path": "asian",
-      "id": "WoYcpgQHNtY"
+      "imagePath": "https://la.ua/wp-content/uploads/2026/04/asian4.jpg",
+      "id": 4
+    },
+    {
+      "name": "Бургери",
+      "path": "burgers",
+      "imagePath": "https://la.ua/wp-content/uploads/2024/05/burgers.jpg",
+      "id": 5
+    },
+    {
+      "name": "Алкогольні напої",
+      "path": "alcohol-drink",
+      "imagePath": "https://la.ua/wp-content/uploads/2024/05/alcohol2.jpg",
+      "id": 6
+    },
+    {
+      "name": "Обід та вечеря",
+      "path": "lunch-and-dinner",
+      "imagePath": "https://la.ua/wp-content/uploads/2024/05/dinners4.jpg",
+      "id": 7
+    },
+    {
+      "name": "Напої",
+      "path": "drinks",
+      "imagePath": "https://la.ua/wp-content/uploads/2024/05/drinks2.jpg",
+      "id": 8
+    },
+    {
+      "name": "Кебаб",
+      "path": "shawarma",
+      "imagePath": "https://la.ua/wp-content/uploads/2024/05/kebab.jpg",
+      "id": 9
+    },
+    {
+      "name": "Хот Доги",
+      "path": "hot-dogs",
+      "imagePath": "https://la.ua/wp-content/uploads/2024/05/hot-dogs2.jpg",
+      "id": 10
+    },
+    {
+      "name": "Десерти",
+      "path": "deserts",
+      "imagePath": "https://la.ua/wp-content/uploads/2024/11/desserts3.jpg",
+      "id": 11
+    },
+    {
+      "name": "PizzaRomana",
+      "path": "pizza-romana",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/03/pizza_romana4.jpg",
+      "id": 12
+    },
+    {
+      "name": "Сніданки",
+      "path": "breakfast",
+      "imagePath": "https://la.ua/wp-content/uploads/2024/11/breakfast3.jpg",
+      "id": 13
+    },
+    {
+      "name": "Закуски",
+      "path": "appetizer",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/11/snacks.jpg",
+      "id": 14
     }
   ],
   "discounts": [
@@ -100,6 +309,38 @@
       "imagePath": "https://la.ua/wp-content/uploads/2021/08/31.jpg",
       "description": "Акція «3+1» діє в п’ятницю, суботу та неділю лише на піци LA П’ЄЦ. Замовляйте три піци та отримуйте ще одну безкоштовно!\n\n* Безкоштовною вважається піца з найменшою вартістю.\n** Ця акція не поєднується з іншими акціями та працює лише на доставку та самовивіз.\n\nАкція діє з 01.01.2026 до 31.12.2026.",
       "id": "xxV_gqpWUGI"
+    },
+    {
+      "name": "-10% на сети та меню",
+      "title": "-10% на сети та меню",
+      "path": "0-na-sety-ta-menyu",
+      "imagePath": "https://la.ua/wp-content/uploads/2023/07/sety-i-menyu3.jpg",
+      "description": "-10% знижки на комплексні пропозиції: суші сети, бургер сети, бургер меню, хот-дог меню та шаурма меню.\n\nРазом дешевше! Замовляй сети та меню бургерів, хот-догів, шаурми, суші та отримуй знижку на страви з меню чи сету -10%.\n\n* Ця акція не поєднується з іншими акціями та працює лише на доставку.",
+      "id": "7IFA5R-"
+    },
+    {
+      "name": "Доставимо вчасно або піца чи рол безкоштовно",
+      "title": "Доставимо вчасно або піца чи рол безкоштовно",
+      "path": "dostavymo-vchasno-abo-pitstsa-bezkoshtovna",
+      "imagePath": "https://la.ua/wp-content/uploads/2021/08/1-1-1.jpg",
+      "description": "«LA П’ЄЦ» турбується про своїх клієнтів. Львів – велике і сучасне місто, тому ми стараємось цінувати Ваш час так само, як цінуєте його Ви. Наша доставка завжди з’являється біля ваших дверей вчасно. Якщо ні – замовник отримує промокод на безкоштовну* піцу або рол до наступного замовлення **.\n\nДоставка їжі у Львові «LA П’ЄЦ» чітко розрахована за часом і зонами міста (зелена зона – доставка до 29 хв, жовта зона – до 59 хв та синя зона – до 89 хв). Ми одразу зазначаємо час доставки і робимо все, щоб не порушити його.\n\nТермін дії промокоду за спізнення – 30 днів. За одне замовлення можна використати лише один промокод за спізнення. Промокод можна використати з 10:00 до 22:55.\n\n* Мінімальна сума замовлення для отримання промо піци чи промо ролу – 500 грн при замовленні на самовивіз або на доставку в зеленій зоні, 1 000 грн – в жовтій зоні та 1 000 грн – в синій зоні.\n\n** Промокод на безкоштовну піцу не видається при здійсненні доставки замовлення на конкретно вказаний клієнтом час.\n\nАкція діє з 01.01.2026 до 31.12.2026.",
+      "id": "WUfnnm3"
+    },
+    {
+      "name": "Самовивіз",
+      "title": "Самовивіз",
+      "path": "action/samovyviz",
+      "imagePath": "https://la.ua/wp-content/uploads/2021/08/samovyviz-102.jpg",
+      "description": "Забирайте своє замовлення самостійно та отримуйте суттєві переваги:\n– гарячу, щойно спечену в печі улюблену піцу, свіжі роли та ситні бургери;\n– знижку 10% ;\n– відсутність мінімальної суми замовлення!*\n*для використання Промо-сертифікату на безкоштовну піцу зберігається умова мінімальної суми замовлення 400 грн.\n\nУмови для отримання знижки 10%:\n1. Обрати улюблені піцу, суші, бургери, салати або напої в меню на сайті.\n2. В “Корзині” обрати доставку “Самовивіз” та адресу найближчого до вас виробництва.\n3. Знижка 10% нараховується автоматично та поширюється на усі позиції в чеку, окрім алкогольних напоїв та піци PizzaRomana.\n4. Підтвердити замовлення та очікувати на дзвінок адміністратора щодо уточнення часу забирання замовлення.\n5. Також можна зателефонувати до оператора і просто озвучити бажання забрати замовлення самостійно.\n6. Здійснити самовивіз та скористатися знижкою можна щодня з 10:00 до 22:00\n7. Дана акція не поєднується з іншими акціями та знижкою на меню і сети",
+      "id": "tluvfK3"
+    },
+    {
+      "name": "День народження з “LA П’ЄЦ”",
+      "title": "День народження з “LA П’ЄЦ”",
+      "path": "den-narodzhennya-z-la-p-yets",
+      "imagePath": "https://la.ua/wp-content/uploads/2021/08/dn-akcziya2-goryzont.jpg",
+      "description": "Святкуйте свій День народження з “LA П’ЄЦ” та отримуйте три піци або два роли у подарунок!\n\nУмови акції:\n– Під подарунком мається на увазі безкоштовний “Святковий набір” з трьох піц: Капрічоза, Салямі та Маргарита або двох ролів: Каліфорнійські з лососем та Філадельфія з креветкою. Вміст набору є незмінним.\n– Мінімальна сума замовлення має складати 900 грн.\n– Акцією може скористатися кожен клієнт в день свого народження та протягом 7-ми днів після нього.\n– Дана акція не поєднується з іншими акціями.",
+      "id": "GjvasCg"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

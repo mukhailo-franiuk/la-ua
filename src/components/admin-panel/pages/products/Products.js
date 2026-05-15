@@ -2,13 +2,17 @@ import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useGetProductsQuery , useDeleteProductMutation} from "../../../../store/productSlice/productSlice";
 import AddProduct from "./AddProduct";
+import UpdateProduct from "./UpdateProduct";
 const Products = () => {
     const [openOptionListId, setOpenOptionListId] = useState(null);
     const [isOpenAddProductForm, setIsOpenAddProductForm] = useState(false);
+    const [isOpenUpdateProductForm, setIsOpenUpdateProductForm] = useState(false);
+    const [isOneProduct , setIsOneProduct] = useState([]);
     const { data } = useGetProductsQuery();
     const [id , setId] = useState('');
     const closeWindowAddProduct = () => {
         setIsOpenAddProductForm(false);
+        setIsOpenUpdateProductForm(false);
     }
    const [deleteProduct] = useDeleteProductMutation();
    const delProduct = async (id) => {
@@ -160,7 +164,14 @@ const Products = () => {
                                                         <button className="w-full block py-2 px-4 text-gray-900 hover:text-white hover:bg-gray-900">Show</button>
                                                     </li>
                                                     <li>
-                                                        <button className="w-full block py-2 px-4 text-gray-900 hover:text-white hover:bg-gray-900">Edit</button>
+                                                        <button 
+                                                        className="w-full block py-2 px-4 text-gray-900 hover:text-white hover:bg-gray-900"
+                                                        onClick={() => {
+                                                            setIsOneProduct(item)
+                                                            setIsOpenUpdateProductForm(true);
+                                                            setOpenOptionListId(null);
+                                                        }}
+                                                        >Edit</button>
                                                     </li>
                                                 </ul>
                                                 <div class="py-1">
@@ -221,6 +232,9 @@ const Products = () => {
             </div>
             <div className={`fixed z-10 w-full top-0 left-0 h-screen flex flex-col items-baseline  text-sm shadow-xl md:grid-cols-3 transition-all duration-700 ease-in-out ${isOpenAddProductForm ? "translate-x-0" : "-translate-x-full"}`}>
                 <AddProduct closeModal={closeWindowAddProduct} />
+            </div>
+            <div className={`fixed z-10 w-full top-0 left-0 h-screen flex flex-col items-baseline  text-sm shadow-xl md:grid-cols-3 transition-all duration-700 ease-in-out ${isOpenUpdateProductForm ? "translate-x-0" : "-translate-x-full"}`}>
+                <UpdateProduct closeModal={closeWindowAddProduct} oneProduct={isOneProduct}/>
             </div>
         </section>
     )

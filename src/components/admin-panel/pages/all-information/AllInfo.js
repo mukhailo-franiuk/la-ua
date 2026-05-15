@@ -5,7 +5,7 @@ const AllInfo = () => {
         <section className="w-full py-8 antialiased bg-gray-900 md:py-8">
             <div className="flex flex-col items-center w-full px-4 2xl:px-0">
                 <h2 className="mb-4 text-xl font-semibold text-white sm:text-2xl md:mb-6">Загальна інформація</h2>
-                <div className="w-full flex lg:flex-row flex-col flex-wrap items-center justify-center gap-6 border-b border-t border-gray-200 py-4 md:py-8 lg:grid-cols-4 xl:gap-16">
+                <div className="w-full flex md:flex-row flex-col flex-wrap justify-between items-center lg:justify-center gap-6 border-b border-t border-gray-200 py-4 md:py-8 lg:grid-cols-4 xl:gap-16">
                     <div className="border-white border-2 rounded-lg p-5 ">
                         <svg className="mb-2 h-8 w-8 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312" />
@@ -48,44 +48,44 @@ const AllInfo = () => {
                             vs 14 last 3 months
                         </p>
                     </div>
-                    <div>
-                        <svg class="mb-2 h-8 w-8 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z" />
+                    <div className="border-white border-2 rounded-lg p-5 ">
+                        <svg className="mb-2 h-8 w-8 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z" />
                         </svg>
-                        <h3 class="mb-2 text-gray-500 dark:text-gray-400">Favorite products added</h3>
-                        <span class="flex items-center text-2xl font-bold text-gray-900 dark:text-white"
+                        <h3 className="mb-2 text-gray-500 dark:text-gray-400">Улюблені продукти</h3>
+                        <span className="flex items-center text-2xl font-bold text-white"
                         >8
-                            <span class="ms-2 inline-flex items-center rounded bg-red-100 px-2.5 py-0.5 text-xs font-medium text-red-800 dark:bg-red-900 dark:text-red-300">
-                                <svg class="-ms-1 me-1 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"></path>
+                            <span className="ms-2 inline-flex items-center rounded bg-red-800 px-2.5 py-0.5 text-xs font-medium text-white">
+                                <svg className="-ms-1 me-1 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v13m0-13 4 4m-4-4-4 4"></path>
                                 </svg>
                                 12%
                             </span>
                         </span>
-                        <p class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-400 sm:text-base">
-                            <svg class="me-1.5 h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        <p className="mt-2 flex items-center text-sm text-gray-500  sm:text-base">
+                            <svg className="me-1.5 h-4 w-4 text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>
                             vs 10 last 3 months
                         </p>
                     </div>
-                    <div>
-                        <svg class="mb-2 h-8 w-8 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9h13a5 5 0 0 1 0 10H7M3 9l4-4M3 9l4 4" />
+                    <div className="border-white border-2 rounded-lg p-5 ">
+                        <svg className="mb-2 h-8 w-8 text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 9h13a5 5 0 0 1 0 10H7M3 9l4-4M3 9l4 4" />
                         </svg>
-                        <h3 class="mb-2 text-gray-500 dark:text-gray-400">Product returns</h3>
-                        <span class="flex items-center text-2xl font-bold text-gray-900 dark:text-white"
+                        <h3 className="mb-2 text-gray-500 ">Повернення товару</h3>
+                        <span className="flex items-center text-2xl font-bold text-white"
                         >2
-                            <span class="ms-2 inline-flex items-center rounded bg-green-100 px-2.5 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-300">
-                                <svg class="-ms-1 me-1 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v13m0-13 4 4m-4-4-4 4"></path>
+                            <span className="ms-2 inline-flex items-center rounded bg-green-800 px-2.5 py-0.5 text-xs font-medium text-white">
+                                <svg className="-ms-1 me-1 h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v13m0-13 4 4m-4-4-4 4"></path>
                                 </svg>
                                 50%
                             </span>
                         </span>
-                        <p class="mt-2 flex items-center text-sm text-gray-500 dark:text-gray-400 sm:text-base">
-                            <svg class="me-1.5 h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        <p className="mt-2 flex items-center text-sm text-gray-500 sm:text-base">
+                            <svg className="me-1.5 h-4 w-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 11h2v5m-2 0h4m-2.592-8.5h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                             </svg>
                             vs 1 last 3 months
                         </p>

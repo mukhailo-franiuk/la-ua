@@ -16,7 +16,8 @@ const Header = (props) => {
         setIsOpenSingIn(false);
     }
     const closeSingInForm = () => {
-        setIsOpenSingIn(false)
+        setIsOpenSingIn(false);
+        isLocalStorage(false);
     }
     useEffect(() => {
         if (localStorage.length === 0) {
@@ -49,7 +50,7 @@ const Header = (props) => {
                                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 9-7 7-7-7" />
                             </svg>
                         </button>
-                        <ul className={`${!isOpenSome ? 'hidden' : 'block'} absolute top-full z-90 -left-14 mt-5 w-48 text-sm font-medium text-heading bg-white border border-default rounded-base`}>
+                        <ul className={`${!isOpenSome ? 'hidden' : 'block'} absolute top-full z-30 -left-14 mt-5 w-48 text-sm font-medium text-heading bg-white border border-default rounded-base`}>
                             {linksFullScreen.map((item, index) => (
                                 <li className="w-full px-4 py-0 border-b border-default rounded-t-lg hover:bg-yellow-100" key={index}>
                                     <Link to={item.path} className="block w-full py-2 "
@@ -89,7 +90,7 @@ const Header = (props) => {
                         <button className="absolute -top-2 -right-3 text-xs text-white bg-gray-900 w-[18px] h-[18px] rounded-full">3</button>
                     </Link>
                     <button
-                        className={`flex flex-row items-center text-[14px] ${isLocalStorage ? 'hidden' : 'block'}`}
+                        className={`flex flex-row items-center text-[14px] ${!isLocalStorage ? 'block' : 'hidden'}`}
                         onClick={() => setIsOpenSingIn(true)}
                     >
                         <svg className="w-7 h-7 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -104,6 +105,7 @@ const Header = (props) => {
                             :
                             [userLocalStorage].map(item => (
                                 <Link to={item.status} key={item.id}>{item.login}</Link>
+                                
                             ))
 
                     }
@@ -122,7 +124,7 @@ const Header = (props) => {
                 </div>
             </div>
             {/* Mobile menu */}
-            <div className={`fixed z-10 w-full bg-white top-0 left-0 h-screen overflow-scroll flex flex-col items-baseline  text-sm shadow-xl md:grid-cols-3 transition-all duration-700 ease-in-out ${isOpenMobileMenu ? "translate-x-0" : "-translate-x-full"}`}>
+            <div className={`fixed z-40 w-full bg-white top-0 left-0 h-screen overflow-scroll flex flex-col items-baseline  text-sm shadow-xl md:grid-cols-3 transition-all duration-700 ease-in-out ${isOpenMobileMenu ? "translate-x-0" : "-translate-x-full"}`}>
                 <div className="w-full flex flex-row justify-between items-center">
                     <Link
                         to={`/`}
@@ -202,7 +204,7 @@ const Header = (props) => {
                 </div>
             </div>
             {/* Sing in form */}
-            <div className={`fixed z-20 w-full h-screen top-0 left-0 ${isOpenSingIn ? 'block' : 'hidden'}`}>
+            <div className={`fixed z-50 w-full h-screen top-0 left-0 ${isOpenSingIn ? 'block' : 'hidden'}`}>
                 <div className="w-full h-full flex justify-center items-center">
                     <SingIn closeFormSingIn={closeSingInForm} />
                 </div>

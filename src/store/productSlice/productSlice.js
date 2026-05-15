@@ -20,16 +20,43 @@ export const productApi = createApi({
                 method: 'POST',
                 body,
             }),
-            invalidatesTags: [{type: 'Products', id: 'LIST'}]
+            invalidatesTags: [{ type: 'Products', id: 'LIST' }]
+        }),
+        updateProduct: build.mutation({
+            query: ({ id, ...patch }) => ({
+                url: `products/${id}`,
+                method: 'PATCH',
+                body: patch,
+            }),
+            // Оптимістичне оновлення кешу
+            async onQueryStarted({ id, ...patch }, { dispatch, queryFulfilled }) {
+                // Оновлюємо кеш для ендпоінту getProducts
+                const patchResult = dispatch(
+                    productApi.util.updateQueryData('getProducts', undefined, (draft) => {
+                        // Знаходимо продукт у кеші та оновлюємо його поля
+                        const product = draft.find((p) => p.id === id);
+                        if (product) {
+                            Object.assign(product, patch);
+                        }
+                    })
+                );
+                try {
+                    // Чекаємо завершення запиту на сервері
+                    await queryFulfilled;
+                } catch {
+                    // Якщо сервер повернув помилку, скасовуємо зміни у кеші
+                    patchResult.undo();
+                }
+            },
         }),
         deleteProduct: build.mutation({
             query: (id) => ({
                 url: `products/${id}`,
                 method: 'DELETE',
             }),
-            invalidatesTags: [{type: 'Products', id: 'LIST'}]
+            invalidatesTags: [{ type: 'Products', id: 'LIST' }]
         })
     })
 });
 
-export const { useGetProductsQuery , useAddProductsMutation , useDeleteProductMutation } = productApi;
+export const { useGetProductsQuery, useAddProductsMutation, useUpdateProductMutation , useDeleteProductMutation } = productApi;

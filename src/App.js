@@ -9,6 +9,8 @@ import Contact from "./components/pages/contact/Contact";
 import Partners from "./components/pages/for-partners/Partners";
 import Discounts from "./components/pages/discount/AllDiscounts";
 import OneDiscount from "./components/pages/discount/OneDiscount";
+import AllProducts from "./components/pages/produts/Products";
+import ProductsListByCategory from "./components/pages/produts/ProductsListByCategory";
 // Admin panel
 import AdminPanel from "./components/admin-panel/AdminPanel";
 import AllInfo from "./components/admin-panel/pages/all-information/AllInfo";
@@ -23,7 +25,7 @@ const App = () => {
   return (
     <div className="w-full">
       <Router>
-        <Header/>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
@@ -31,9 +33,9 @@ const App = () => {
           <Route path="discount/:oneDiscount" element={<OneDiscount />} />
           <Route path="contact" element={<Contact />} />
           <Route path="for-partners" element={<Partners />} />
+          <Route path="products/:listProductsByCategory" element={<AllProducts />} />
           {/* ADMIN */}
-
-          <Route path="admin" element={<AdminPanel />} >
+          <Route path="/admin" element={<AdminPanel />} >
             <Route index element={<AllInfo />} />
             <Route path="products" element={<Products />} />
             <Route path="discount" element={<DiscountAdmin />} />
@@ -42,7 +44,7 @@ const App = () => {
 
           {/* USER */}
 
-          <Route path="user" element={<UsersPanel />} >
+          <Route path="/user" element={<UsersPanel />} >
           </Route>
         </Routes>
         <Footer />
