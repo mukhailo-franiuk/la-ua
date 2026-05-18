@@ -6,7 +6,6 @@ const AdminPanel = () => {
     document.title = `Панель адміністрування - LA П’ЄЦ нормальна доставка їжі у Львові`
     const [isOpenNav, setIsOpenNav] = useState(false);
     const [deleteUser] = useDeleteLoginUsersMutation();
-    const localUser = JSON.parse(localStorage.getItem('user'));
     const sidebarLinks = [
         { name: "Загальна інформація", path: "" },
         { name: "Продукти", path: "products" },
@@ -14,6 +13,7 @@ const AdminPanel = () => {
         { name: "Категорії", path: "categories" },
         { name: "Новини", path: "news" },
     ];
+    const localUser = JSON.parse(localStorage.getItem('user'));
     const delUser = async (id) => {
         await deleteUser(id).unwrap();
     }

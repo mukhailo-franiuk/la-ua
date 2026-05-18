@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
-import { useLoginUserMutation, useGetUsersQuery } from "../../store/usersSlice/usersSlice";
+import { useGetUsersQuery } from "../../store/usersSlice/usersSlice";
 
 const SignIn = ({ closeFormSingIn }) => {
 
     // Ініціалізація мутації
-    const [loginUser, { isLoading }] = useLoginUserMutation();
-    const { data } = useGetUsersQuery();
+    const { data , isLoading} = useGetUsersQuery();
     const {
         register,
         handleSubmit,
@@ -27,24 +26,20 @@ const SignIn = ({ closeFormSingIn }) => {
             const foundUser = data.find(
                 (item) => item.login === dataF.login && item.password === dataF.password
             );
-
             if (!foundUser) {
                 toast.error("Такого користувача немає або пароль невірний");
                 return; // Зупиняємо виконання, якщо не знайдено
             }
-
-            // unwrap() розпаковує проміс, дозволяючи зловити помилку сервера через catch
-            // Тепер await знаходиться безпосередньо в async функції checkForm
-            const user = await loginUser({ ...dataF, status: foundUser.status }).unwrap();
-            console.log(user)
             // Зберігаємо безпечно отримані дані користувача
-            localStorage.setItem("user", JSON.stringify(user));
+            const userInfo = localStorage.setItem("user", JSON.stringify(foundUser));
+            const user = JSON.parse(localStorage.getItem("user"));
             toast.success("Успішний вхід!");
+           
             // Перенаправлення залежно від ролі
-            if (user.status === "admin") {
+            if (user.role === "admin") {
                 window.location.href = "/admin";
             } else {
-                window.location.href = user.status;
+                window.location.href = user.role;
             }
             closeFormSingIn();
             reset();
@@ -57,15 +52,15 @@ const SignIn = ({ closeFormSingIn }) => {
 
 
     return (
-        <div className="flex h-screen w-full bg-white relative">
+        <div className="flex h-screen fixed z-10 w-full bg-white top-0">
             <Toaster position="top-center" />
 
             {/* Кнопка закриття */}
-            <button className="absolute top-4 right-4 p-2 cursor-pointer z-50" onClick={closeFormSingIn} type="button">
+            <Link to={`/`} className="absolute top-4 right-4 p-2 cursor-pointer z-50" onClick={closeFormSingIn} type="button">
                 <svg className="w-6 h-6 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 </svg>
-            </button>
+            </Link>
 
             {/* Банер */}
             <div className="w-full hidden lg:block h-full">

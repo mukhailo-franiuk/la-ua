@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { linksFullScreen, mobileLinks } from "./optionHeader";
-import SingIn from "../sing-in/SingIn";
 const Header = (props) => {
     const [isOpenSome, setIsOpenSome] = useState(false);
     const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
@@ -15,17 +14,8 @@ const Header = (props) => {
         setIsOpenSubMobileMenu('hidden');
         setIsOpenSingIn(false);
     }
-    const closeSingInForm = () => {
-        setIsOpenSingIn(false);
-        isLocalStorage(false);
-    }
-    useEffect(() => {
-        if (localStorage.length === 0) {
-            setIsLocalStorage(false)
-        } else {
-            setIsLocalStorage(true)
-        }
-    }, [])
+    const localStore = JSON.parse(localStorage.getItem("myCollection")) || [];
+    
     return (
         <header className="w-full flex justify-center items-center shadow-md">
             <div className="w-full lg:w-4/5 flex flex-row justify-between items-center my-3">
@@ -83,28 +73,33 @@ const Header = (props) => {
                             <p className="text-[12px] text-left font-bold">м.Львів</p>
                         </div>
                     </button>
-                    <Link to={`checkout`} className="relative cursor-pointer">
+                    <Link to={`/cart`} className="relative cursor-pointer">
                         <svg width="18" height="18" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M.583.583h2.333l1.564 7.81a1.17 1.17 0 0 0 1.166.94h5.67a1.17 1.17 0 0 0 1.167-.94l.933-4.893H3.5m2.333 8.75a.583.583 0 1 1-1.167 0 .583.583 0 0 1 1.167 0m6.417 0a.583.583 0 1 1-1.167 0 .583.583 0 0 1 1.167 0" stroke="#000" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
-                        <button className="absolute -top-2 -right-3 text-xs text-white bg-gray-900 w-[18px] h-[18px] rounded-full">3</button>
+                        <button className="absolute -top-2 -right-3 text-xs text-white bg-gray-900 w-[18px] h-[18px] rounded-full">{localStore.length}</button>
                     </Link>
-                    <button
-                        className={`flex flex-row items-center text-[14px] ${!isLocalStorage ? 'block' : 'hidden'}`}
-                        onClick={() => setIsOpenSingIn(true)}
+                    <Link to={`/login`}
+                        className={`flex flex-row items-center text-[14px] ${userLocalStorage === null ? 'block' : 'hidden'}`}
+                       
                     >
                         <svg className="w-7 h-7 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
                             <path fillRule="evenodd" d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z" clipRule="evenodd" />
                         </svg>
                         <span className="hidden md:block">Вхід</span>
-                    </button>
+                    </Link>
                     {
                         (!userLocalStorage)
                             ?
-                            <Link to={``} className={`${props.checkUsers ? 'block' : 'hidden'}`}></Link>
+                            
+                                <Link to={``} className={`${props.checkUsers ? 'hidden' : 'block'}`}></Link>
+                            
                             :
                             [userLocalStorage].map(item => (
-                                <Link to={item.status} key={item.id}>{item.login}</Link>
+                                
+                                    <Link to={item.role} key={item.id}>{item.login}</Link>
+                                
+                                
                                 
                             ))
 
@@ -203,12 +198,7 @@ const Header = (props) => {
 
                 </div>
             </div>
-            {/* Sing in form */}
-            <div className={`fixed z-50 w-full h-screen top-0 left-0 ${isOpenSingIn ? 'block' : 'hidden'}`}>
-                <div className="w-full h-full flex justify-center items-center">
-                    <SingIn closeFormSingIn={closeSingInForm} />
-                </div>
-            </div>
+            
         </header>
     )
 }

@@ -58,7 +58,7 @@ const UpdateProduct = (props) => {
                 <span className="sr-only">Close menu</span>
             </button>
             <form action="#" className="w-full" onSubmit={handleSubmit(UpdateProduct)}>
-                <div class="space-y-4 mb-5">
+                <div className="space-y-4 mb-5">
                     <div>
                         <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Назва</label>
                         <input
@@ -167,7 +167,7 @@ const UpdateProduct = (props) => {
                         >
                             {
                                 data?.map(item => (
-                                    <option value={item.path}>{item.name}</option>
+                                    <option value={item.path} key={item.id}>{item.name}</option>
                                 ))
                             }
                         </select>

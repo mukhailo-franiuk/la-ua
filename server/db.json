@@ -6,7 +6,7 @@
       "email": "admin@gmail.com",
       "login": "Admin",
       "password": "Flhtyfkby21987",
-      "status": "admin",
+      "role": "admin",
       "statusWork": "active",
       "uniquePassword": "Adrksfjl32-/]'"
     },
@@ -16,23 +16,9 @@
       "email": "maxim@gmail.com",
       "login": "max-dorn",
       "password": "Flhtyfkby21987",
-      "status": "user",
+      "role": "user",
       "statusWork": "",
       "uniquePassword": ""
-    }
-  ],
-  "active": [
-    {
-      "login": "Admin",
-      "password": "Flhtyfkby21987",
-      "status": "admin",
-      "id": 1
-    },
-    {
-      "login": "Admin",
-      "password": "Flhtyfkby21987",
-      "status": "admin",
-      "id": 2
     }
   ],
   "products": [
@@ -189,6 +175,188 @@
       "description": "біле, напівсолодке, вміст алкоголю: 11,7%, Україна, Одеська обл.",
       "imagePath": "https://la.ua/wp-content/uploads/2025/07/shabo-original-collection-bile.jpg",
       "id": "NiesEM3"
+    },
+    {
+      "name": "Інсалата ді Поло",
+      "category": "salad",
+      "proteins": "15.8",
+      "carbohydrates": "4.1",
+      "fats": "16.2",
+      "caloricContent": "216",
+      "size": "",
+      "weight": "210",
+      "price": "190",
+      "description": "філе куряче сувід, бекон, сир Фета, сир Пармезан, салат бейбі, помідори чері, олія оливкова, лимонний сік, соус Світ чілі",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/05/insalata-di-polo.jpg",
+      "id": "zsdowrS"
+    },
+    {
+      "name": "Інсалата ді Парма",
+      "category": "salad",
+      "proteins": "7.9",
+      "carbohydrates": "6.7",
+      "fats": "",
+      "caloricContent": "10.1",
+      "size": "149",
+      "weight": "",
+      "price": "200",
+      "description": "прошуто, салат бейбі, помідор чері, персики, сир лазур, горіх грецький, соус медово-гірчичний, лимонний сік",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/05/insalata-di-parma-persyky.jpg",
+      "id": "ASiYii6"
+    },
+    {
+      "name": "Сицилія",
+      "category": "salad",
+      "proteins": "16.1",
+      "carbohydrates": "10.7",
+      "fats": "20.5",
+      "caloricContent": "279",
+      "size": "",
+      "weight": "230",
+      "price": "215",
+      "description": "креветки смажені, гуакамоле, томати в'ялені, помідори чері, огірок, салат бейбі, олія оливкова, лимонний сік",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/05/syczyliya.jpg",
+      "id": "Yho0o6B"
+    },
+    {
+      "name": "Цезаріо з куркою",
+      "category": "salad",
+      "proteins": "11.8",
+      "carbohydrates": "9.8",
+      "fats": "22.5",
+      "caloricContent": "291",
+      "size": "",
+      "weight": "275",
+      "price": "240",
+      "description": "Салат айсберг, помідори, куряче м`ясо, сир пармезан, перепелині яйця, духмяні сухарики та фірмова заправка - соус «Цезар».",
+      "imagePath": "https://la.ua/wp-content/uploads/2021/08/czezario-z-kurkoyu-3.jpg",
+      "id": "6-Vq51s"
+    },
+    {
+      "name": "Цезаріо з лососем",
+      "category": "salad",
+      "proteins": "16.9",
+      "carbohydrates": "2.8",
+      "fats": "10.4",
+      "caloricContent": "197",
+      "size": "",
+      "weight": "275",
+      "price": "287",
+      "description": "Салат айсберг, помідори, лосось слабосолений, сир пармезан, перепелині яйця, духмяні сухарики та фірмова заправка - соус «Цезар».",
+      "imagePath": "https://la.ua/wp-content/uploads/2024/06/czezario-z-lososem-3.jpg",
+      "id": "Woac1ZN"
+    },
+    {
+      "name": "Cет запечений",
+      "category": "sushi",
+      "proteins": "",
+      "carbohydrates": "",
+      "fats": "",
+      "caloricContent": "",
+      "size": "",
+      "weight": "960",
+      "price": "810",
+      "description": "Урамакі з креветкою - 1 шт,\n\nУрамакі з лососем - 1 шт,\n\nУрамакі з тунцем - 1 шт",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/06/zapechenyj-set.jpg",
+      "id": "ARBQ06I"
+    },
+    {
+      "name": "Сет гарячий",
+      "category": "sushi",
+      "proteins": "",
+      "carbohydrates": "",
+      "fats": "",
+      "caloricContent": "",
+      "size": "",
+      "weight": "970",
+      "price": "961",
+      "description": "Банзай з вугрем та свіжим лососем - 1 шт,\n\nБанзай зі смаженим лососем - 1 шт,\n\nБанзай з тунцем - 1 шт",
+      "imagePath": "https://la.ua/wp-content/uploads/2021/08/set-garyachyj2.jpg",
+      "id": "JcAB5cx"
+    },
+    {
+      "name": "Сет філадельфія",
+      "category": "sushi",
+      "proteins": "",
+      "carbohydrates": "",
+      "fats": "",
+      "caloricContent": "",
+      "size": "",
+      "weight": "1165",
+      "price": "1224",
+      "description": "Філадельфія з лососем - 1 шт,\n\nФіладельфія з вугрем - 1 шт,\n\nФіладельфія з тунцем - 1 шт,\n\nФіладельфія з креветкою - 1 шт",
+      "imagePath": "https://la.ua/wp-content/uploads/2021/08/fila-set.jpg",
+      "id": "3gQLo_U"
+    },
+    {
+      "name": "Сет смачний",
+      "category": "sushi",
+      "proteins": "",
+      "carbohydrates": "",
+      "fats": "",
+      "caloricContent": "",
+      "size": "",
+      "weight": "855",
+      "price": "909",
+      "description": "Філадельфія з лососем - 1 шт,\n\nКаліфорнійські з креветкою - 1 шт,\n\nФіладельфія De Luxe - 1 шт",
+      "imagePath": "https://la.ua/wp-content/uploads/2022/10/set-smachnyj.jpg",
+      "id": "wpeipIr"
+    },
+    {
+      "name": "Запечені урамакі з лососем",
+      "category": "sushi",
+      "proteins": "8.4",
+      "carbohydrates": "16.7",
+      "fats": "9.5",
+      "caloricContent": "189",
+      "size": "",
+      "weight": "320",
+      "price": "297",
+      "description": "Рис, норі, малосольний лосось, огірок, пармезан, моцарела, гауда, майонез, кунжут, суміш Фурікаке, соус Унагі",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/05/zapecheni-uramaki-z-lososem.jpg",
+      "id": "RK9zqdu"
+    },
+    {
+      "name": "Запечені урамакі з креветкою",
+      "category": "sushi",
+      "proteins": "8.4",
+      "carbohydrates": "16.7",
+      "fats": "9.5",
+      "caloricContent": "189",
+      "size": "",
+      "weight": "320",
+      "price": "300",
+      "description": "Рис, норі, креветка, авокадо, моцарела, гауда, майонез, кунжут, соус Унагі",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/05/zapecheni-uramaki-z-krevetkoyu.jpg",
+      "id": "inWmNxg"
+    },
+    {
+      "name": "Смажений рис з куркою",
+      "category": "asian",
+      "proteins": "4",
+      "carbohydrates": "16.1",
+      "fats": "6.1",
+      "caloricContent": "134",
+      "size": "",
+      "weight": "405",
+      "price": "310",
+      "description": "рис, філе куряче, гриби муер, олія кунжутна, порей, кабачок, суміш овочева, смажений арахіс, кімчі, шпинат, помідори, биті огірки, перець чилі, часник, імбир, цибуля, соус соєвий, соус світчілі",
+      "imagePath": "https://la.ua/wp-content/uploads/2026/02/smazhenyj-rys-z-kurkoyu_papper.jpg",
+      "id": "hzKQXxW"
+    },
+    {
+      "name": "Смажений рис з креветками",
+      "category": "asian",
+      "proteins": "5.2",
+      "carbohydrates": "14.5",
+      "fats": "5.3",
+      "caloricContent": "124",
+      "size": "",
+      "weight": "455",
+      "price": "330",
+      "description": "рис, креветки, гриби муер, олія кунжутна, яйце куряче, порей, ананас, кімчі, шпинат, помідори, биті огірки, перець чилі, часник, імбир, кінза, цибуля, лайм, паростки бобів Мунг, м'ята, соус соєвий, соус світчілі",
+      "imagePath": "https://la.ua/wp-content/uploads/2026/02/smazhenyj-rys-z-krevetkamy_papper.jpg",
+      "id": "M1Z2bSr"
     }
   ],
   "categories": [
@@ -343,5 +511,6 @@
       "id": "GjvasCg"
     }
   ],
+  "cart": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

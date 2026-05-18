@@ -10,7 +10,8 @@ import Partners from "./components/pages/for-partners/Partners";
 import Discounts from "./components/pages/discount/AllDiscounts";
 import OneDiscount from "./components/pages/discount/OneDiscount";
 import AllProducts from "./components/pages/produts/Products";
-import ProductsListByCategory from "./components/pages/produts/ProductsListByCategory";
+import Cart from "./components/pages/cart/ProductCart";
+import SignIn from "./components/sing-in/Login";
 // Admin panel
 import AdminPanel from "./components/admin-panel/AdminPanel";
 import AllInfo from "./components/admin-panel/pages/all-information/AllInfo";
@@ -19,14 +20,16 @@ import DiscountAdmin from "./components/admin-panel/pages/discount/Discount";
 import Categories from "./components/admin-panel/pages/categories/Categories";
 // Users panel
 import UsersPanel from "./components/users-panel/UsersPanel";
+// Import protection component
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
-
   return (
     <div className="w-full">
       <Router>
         <Header />
         <Routes>
+          {/* ПУБЛІЧНІ МАРШРУТИ */}
           <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="discount" element={<Discounts />} />
@@ -34,23 +37,29 @@ const App = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="for-partners" element={<Partners />} />
           <Route path="products/:listProductsByCategory" element={<AllProducts />} />
-          {/* ADMIN */}
-          <Route path="/admin" element={<AdminPanel />} >
-            <Route index element={<AllInfo />} />
-            <Route path="products" element={<Products />} />
-            <Route path="discount" element={<DiscountAdmin />} />
-            <Route path="categories" element={<Categories />} />
+          <Route path="/login" element={<SignIn />} />
+          <Route path="/cart" element={<Cart />} />
+
+          {/* ЗАХИЩЕНІ МАРШРУТИ ДЛЯ АДМІНІСТРАТОРА */}
+          <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
+            <Route path="/admin" element={<AdminPanel />}>
+              <Route index element={<AllInfo />} />
+              <Route path="products" element={<Products />} />
+              <Route path="discount" element={<DiscountAdmin />} />
+              <Route path="categories" element={<Categories />} />
+            </Route>
           </Route>
 
-          {/* USER */}
-
-          <Route path="/user" element={<UsersPanel />} >
+          {/* ЗАХИЩЕНІ МАРШРУТИ ДЛЯ ЗВИЧАЙНОГО КОРИСТУВАЧА */}
+          <Route element={<ProtectedRoute allowedRoles={["user", "admin"]} />}>
+            <Route path="/user" element={<UsersPanel />} />
           </Route>
         </Routes>
         <Footer />
       </Router>
     </div>
   );
-}
+};
 
 export default App;
+
