@@ -1,6 +1,6 @@
 
 export const linksFullScreen = [
-    {title:'Вакансії',path:'vakansiyi'},
+    {title:'Вакансії',path:'vacancies'},
     {title:'Франшиза',path:'https://business.la.ua/'},
     {title:'Оплата',path:'payment'},
     {title:'Про нас',path:'about'},

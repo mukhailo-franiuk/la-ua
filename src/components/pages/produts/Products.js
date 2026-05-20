@@ -1,20 +1,25 @@
 import { useParams, Link } from "react-router-dom";
 import { useGetProductsQuery } from "../../../store/productSlice/productSlice";
-import { use, useState } from "react";
-import { useAddCartMutation } from "../../../store/cartSlice/cartSlice";
+import { useGetCategoriesQuery } from "../../../store/categorySlice/categorySlice";
+import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 
 const AllProducts = ({ id, description, title, price, quantity }) => {
     const { data: products = [], isLoading, isError } = useGetProductsQuery();
-    const [addCart, { isLoading: isAddingToCart }] = useAddCartMutation();
-    let userId = 0;
+    const { data: categories = [] } = useGetCategoriesQuery();
     const { listProductsByCategory: categoryParam } = useParams();
     const [selectedProduct, setSelectedProduct] = useState(null);
-
     const filteredProducts = products.filter(
         (item) => item.category === categoryParam
     );
-
+    console.log(categories.name);
+    filteredProducts.map((item) => {
+        categories.map((category) => {
+            if (item.category === category.path) {
+                document.title = `${category.name} | LA П’ЄЦ нормальна доставка їжі нормальна доставка їжі`;
+            }
+    }); 
+});
     if (isLoading) return <div>Завантаження...</div>;
     if (isError) return <div>Помилка завантаження товарів</div>;
     const handleAddToCart = (product) => {
@@ -83,7 +88,7 @@ const AllProducts = ({ id, description, title, price, quantity }) => {
                             onClick={() => setSelectedProduct(product)}
                         >
                             <div className="w-full flex justify-center items-center h-48 overflow-hidden">
-                                <img className="rounded-base max-h-full max-w-full object-contain" src={product.imagePath} alt="product image" />
+                                <img className="rounded-base max-h-full max-w-full object-contain" src={product.imagePath} alt={product.name} />
                             </div>
                             <div className="w-full flex-grow flex flex-col justify-between mt-4">
                                 <div>

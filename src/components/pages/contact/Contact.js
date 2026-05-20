@@ -4,7 +4,7 @@ const Contact = () => {
     document.title = `Контакти - LA П’ЄЦ нормальна доставка їжі у Львові`;
     return (
         <div className="w-full flex flex-col items-center">
-            <h1 className="mt-10 text-center w-full py-3 bg-gray-300 text-gray-900 font-bold text-2xl">Контактна інформація</h1>
+            <h1 className="mt-10 text-center w-full py-3 bg-gray-100 text-gray-900 font-bold text-2xl">Контактна інформація</h1>
             <div className="flex flex-col justify-center items-center lg:w-3/5 md:w-4/5 w-full">
                 <div className="w-full flex flex-row justify-between items-center border-b-2 my-7">
                     <span className="flex flex-row mb-1 gap-2">

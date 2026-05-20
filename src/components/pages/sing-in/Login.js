@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from "react-hot-toast";
-import { useGetUsersQuery } from "../../store/usersSlice/usersSlice";
+import { useGetUsersQuery } from "../../../store/usersSlice/usersSlice";
 
 const SignIn = ({ closeFormSingIn }) => {
 
@@ -31,7 +31,7 @@ const SignIn = ({ closeFormSingIn }) => {
                 return; // Зупиняємо виконання, якщо не знайдено
             }
             // Зберігаємо безпечно отримані дані користувача
-            const userInfo = localStorage.setItem("user", JSON.stringify(foundUser));
+            localStorage.setItem("user", JSON.stringify(foundUser));
             const user = JSON.parse(localStorage.getItem("user"));
             toast.success("Успішний вхід!");
            
@@ -64,7 +64,7 @@ const SignIn = ({ closeFormSingIn }) => {
 
             {/* Банер */}
             <div className="w-full hidden lg:block h-full">
-                <img className="h-full w-full object-cover" src="la.ua" alt="Салямі банер" />
+                <img className="h-full w-full object-cover" src="https://la.ua/wp-content/uploads/2021/08/kaprichoza.jpg" alt="Салямі банер" />
             </div>
 
             {/* Форма */}
@@ -104,6 +104,7 @@ const SignIn = ({ closeFormSingIn }) => {
                         {isLoading ? "Перевірка..." : "Увійти"}
                     </button>
                 </form>
+                <p className="text-sm text-gray-500 mt-4">Не маєте облікового запису? <Link to="/sign-up" className="text-blue-500 hover:underline">Зареєструватися</Link></p>
             </div>
         </div>
     );

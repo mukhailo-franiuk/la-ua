@@ -1,27 +1,27 @@
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { useGetProductsQuery, useDeleteProductMutation } from "../../../../store/productSlice/productSlice";
+import { useGetVacanciesQuery , useDeleteVacancyMutation } from "../../../../store/vacanciesSlice/vacanciesSlice";
 import { useGetCategoriesQuery } from "../../../../store/categorySlice/categorySlice";
-import AddProduct from "./AddProduct";
-import UpdateProduct from "./UpdateProduct";
-const Products = () => {
+import Addvacancies from "./Addvacancies";
+import UpdateVacancies from "./UpdateVacancies";
+const VacanciesAdmin = () => {
     const [openOptionListId, setOpenOptionListId] = useState(null);
-    const [isOpenAddProductForm, setIsOpenAddProductForm] = useState(false);
-    const [isOpenUpdateProductForm, setIsOpenUpdateProductForm] = useState(false);
-    const [isOneProduct, setIsOneProduct] = useState([]);
+    const [isOpenAddVacancyForm, setIsOpenAddVacancyForm] = useState(false);
+    const [isOpenUpdateVacancyForm, setIsOpenUpdateVacancyForm] = useState(false);
+    const [isOneVacancy, setIsOneVacancy] = useState([]);
     const [isOpenQuestion, setIsOpenAddQuestion] = useState(false);
     const [isOpenFilter , setIsOpenFilter] = useState(false);
-    const { data } = useGetProductsQuery();
+    const { data } = useGetVacanciesQuery();
     const { data: categories } = useGetCategoriesQuery();
     const [id, setId] = useState('');
-    const closeWindowAddProduct = () => {
-        setIsOpenAddProductForm(false);
-        setIsOpenUpdateProductForm(false);
+    const closeWindowAddVacancy = () => {
+        setIsOpenAddVacancyForm(false);
+        setIsOpenUpdateVacancyForm(false);
     }
-    const [deleteProduct] = useDeleteProductMutation();
-    const delProduct = async (id) => {
-        await deleteProduct(id).unwrap();
-        toast.success('Продукт видалено!')
+    const [deleteVacancy] = useDeleteVacancyMutation();
+    const delVacancy = async (id) => {
+        await deleteVacancy(id).unwrap();
+        toast.success('Вакансія видалена!')
     }
     return (
         <section className="bg-white p-3 sm:p-5">
@@ -72,54 +72,14 @@ const Products = () => {
                             <button
                                 type="button"
                                 className="flex items-center justify-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
-                                onClick={() => setIsOpenAddProductForm(true)}
+                                onClick={() => setIsOpenAddVacancyForm(true)}
                             >
                                 <svg className="h-4 w-4 mr-2 mb-1" fill="currentColor" viewBox={`0 0 20 20`} xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                                     <path clipRule="evenodd" fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
                                 </svg>
-                                Добавити продукт
+                                Добавити вакансію
                             </button>
-                            <div className="flex items-center space-x-3 w-full md:w-auto relative">
-                                <button className="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button">
-                                    <svg className="-ml-1 mr-1.5 w-5 h-5" fill="currentColor" viewBox={`0 0 20 20`} xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                        <path clipRule="evenodd" fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                                    </svg>
-                                    Actions
-                                </button>
-                                <div className="hidden z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600">
-                                    <ul className="py-1 text-sm text-gray-700 dark:text-gray-200">
-                                        <li>
-                                            <button className="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Mass Edit</button>
-                                        </li>
-                                    </ul>
-                                    <div className="py-1">
-                                        <button className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white">Delete all</button>
-                                    </div>
-                                </div>
-                                <button 
-                                className="w-full md:w-auto flex items-center justify-center py-2 px-4 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-primary-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="button"
-                                onClick={() => (!isOpenFilter) ? setIsOpenFilter(true) : setIsOpenFilter(false)}
-                                >
-                                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" className="h-4 w-4 mr-2 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                                        <path fillRule="evenodd" d="M3 3a1 1 0 011-1h12a1 1 0 011 1v3a1 1 0 01-.293.707L12 11.414V15a1 1 0 01-.293.707l-2 2A1 1 0 018 17v-5.586L3.293 6.707A1 1 0 013 6V3z" clipRule="evenodd" />
-                                    </svg>
-                                    Фільтр
-                                    <svg className="-mr-1 ml-1.5 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                        <path clipRule="evenodd" fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
-                                    </svg>
-                                </button>
-                                <div className={`absolute top-full right-0 z-10 w-48 p-3 bg-white rounded-lg shadow dark:bg-gray-700 ${(isOpenFilter) ? 'block' : 'hidden'}`}>
-                                    <h6 className="mb-3 text-sm font-medium text-gray-900 dark:text-white">Вибрати категорію</h6>
-                                    <ul className="space-y-2 text-sm">
-                                        {categories?.map((item) => (
-                                            <li className="flex items-center" key={item.id}>
-                                                <input id={item.id} type="checkbox" value="" className="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 dark:focus:ring-primary-600 dark:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500" />
-                                                <label htmlFor={item.id} className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-100">{item.name}</label>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                     <div className="overflow-x-auto">
@@ -127,9 +87,8 @@ const Products = () => {
                             <thead className="text-xs text-white uppercase bg-gray-700 ">
                                 <tr>
                                     <th scope="col" className="px-4 py-3">Номер</th>
-                                    <th scope="col" className="px-4 py-3">Категорія</th>
-                                    <th scope="col" className="px-4 py-3">Назва</th>
-                                    <th scope="col" className="px-4 py-3">Ціна</th>
+                                    <th scope="col" className="px-4 py-3">Посилання</th>
+                                    <th scope="col" className="px-4 py-3">Опис</th>
                                     <th scope="col" className="px-4 py-3">
                                         <span className="sr-only">Actions</span>
                                     </th>
@@ -139,9 +98,8 @@ const Products = () => {
                                 {data?.map((item, index) => (
                                     <tr className="border-b border-white" key={item.id}>
                                         <th scope="row" className="px-4 py-3 font-medium whitespace-nowrap text-white">{index + 1}</th>
-                                        <td className="px-4 py-3 text-white">{item.category}</td>
-                                        <td className="px-4 py-3 text-white">{item.name}</td>
-                                        <td className="px-4 py-3 text-white">{item.price}</td>
+                                        <td className="px-4 py-3 text-white">{item.path}</td>
+                                        <td className="px-4 py-3 text-white">{item.description}</td>
                                         <td className="px-4 py-3 flex items-center justify-end">
                                             <button
                                                 className="inline-flex items-center p-0.5 text-sm font-medium text-center text-gray-500 hover:text-gray-800 rounded-lg focus:outline-none dark:text-gray-400 dark:hover:text-gray-100" type="button"
@@ -160,8 +118,8 @@ const Products = () => {
                                                         <button
                                                             className="w-full block py-2 px-4 text-gray-900 hover:text-white hover:bg-gray-900"
                                                             onClick={() => {
-                                                                setIsOneProduct(item)
-                                                                setIsOpenUpdateProductForm(true);
+                                                                setIsOneVacancy(item);
+                                                                setIsOpenUpdateVacancyForm(true);
                                                                 setOpenOptionListId(null);
                                                             }}
                                                         >Edit</button>
@@ -187,11 +145,11 @@ const Products = () => {
                     
                 </div>
             </div>
-            <div className={`fixed z-10 w-full top-0 left-0 h-screen flex flex-col items-baseline  text-sm shadow-xl md:grid-cols-3 transition-all duration-700 ease-in-out ${isOpenAddProductForm ? "translate-x-0" : "-translate-x-full"}`}>
-                <AddProduct closeModal={closeWindowAddProduct} />
+            <div className={`fixed z-10 w-full top-0 left-0 h-screen flex flex-col items-baseline  text-sm shadow-xl md:grid-cols-3 transition-all duration-700 ease-in-out ${isOpenAddVacancyForm ? "translate-x-0" : "-translate-x-full"}`}>
+                <Addvacancies closeModal={closeWindowAddVacancy} />
             </div>
-            <div className={`fixed z-10 w-full top-0 left-0 h-screen flex flex-col items-baseline  text-sm shadow-xl md:grid-cols-3 transition-all duration-700 ease-in-out ${isOpenUpdateProductForm ? "translate-x-0" : "-translate-x-full"}`}>
-                <UpdateProduct closeModal={closeWindowAddProduct} oneProduct={isOneProduct} />
+            <div className={`fixed z-10 w-full top-0 left-0 h-screen flex flex-col items-baseline  text-sm shadow-xl md:grid-cols-3 transition-all duration-700 ease-in-out ${isOpenUpdateVacancyForm ? "translate-x-0" : "-translate-x-full"}`}>
+                <UpdateVacancies closeModal={closeWindowAddVacancy} oneVacancie={isOneVacancy} />
             </div>
             <div className={`fixed z-10 w-full top-0 left-0 flex flex-col items-baseline text-sm md:grid-cols-3 transition-all duration-700 ease-in-out ${isOpenQuestion ? "translate-y-0" : "-translate-y-full"}`}>
                 <div className="flex justify-center items-center w-full md:inset-0 h-modal md:h-full">
@@ -205,7 +163,7 @@ const Products = () => {
                                 <span className="sr-only">Close modal</span>
                             </button>
                             <svg className="text-gray-400 dark:text-gray-500 w-11 h-11 mb-3.5 mx-auto" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z" clipRule="evenodd"></path></svg>
-                            <p className="mb-4 text-gray-500 dark:text-gray-300">Ви дійсно хочете видалити цю категорію?</p>
+                            <p className="mb-4 text-gray-500 dark:text-gray-300">Ви дійсно хочете видалити цю вакансію?</p>
                             <div className="flex justify-center items-center space-x-4">
                                 <button 
                                 type="button" 
@@ -220,7 +178,7 @@ const Products = () => {
                                 type="submit" 
                                 className="py-2 px-3 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-900"
                                 onClick={() => {
-                                    delProduct(id)
+                                    delVacancy(id)
                                     setIsOpenAddQuestion(false);
                                 }}
                                 >
@@ -234,4 +192,4 @@ const Products = () => {
         </section>
     )
 }
-export default Products;
+export default VacanciesAdmin;

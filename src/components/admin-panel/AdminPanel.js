@@ -12,6 +12,10 @@ const AdminPanel = () => {
         { name: "Акції", path: "discount" },
         { name: "Категорії", path: "categories" },
         { name: "Новини", path: "news" },
+        { name: "Повідомлення", path: "notifications" },
+        { name: "Вакансії", path: "vacancies" },
+        { name: "Список користувачів", path: "users" },
+        { name: "Замовлення", path: "orders" },
     ];
     const localUser = JSON.parse(localStorage.getItem('user'));
     const delUser = async (id) => {

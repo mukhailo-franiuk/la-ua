@@ -3,7 +3,7 @@ const About = () => {
     document.title = `Про нас - LA П’ЄЦ нормальна доставка їжі у Львові`;
     return (
         <section className="w-full flex flex-col">
-            <h1 className="mt-10 text-center w-full py-3 bg-gray-300 text-gray-900 font-bold text-2xl">Про нас</h1>
+            <h1 className="mt-10 text-center w-full py-3 bg-gray-100 text-gray-900 font-bold text-2xl">Про нас</h1>
             <div className="mt-10 flex flex-col items-center justify-center w-full">
                 <p className="my-4 lg:w-3/5 w-full lg:px-0 px-5">
                     Сервіс доставки їжі “LA П’ЄЦ” у Львові – це не просто черговий бізнес.

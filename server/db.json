@@ -9,16 +9,6 @@
       "role": "admin",
       "statusWork": "active",
       "uniquePassword": "Adrksfjl32-/]'"
-    },
-    {
-      "id": "2",
-      "name": "Максим Бард",
-      "email": "maxim@gmail.com",
-      "login": "max-dorn",
-      "password": "Flhtyfkby21987",
-      "role": "user",
-      "statusWork": "",
-      "uniquePassword": ""
     }
   ],
   "products": [
@@ -357,6 +347,174 @@
       "description": "рис, креветки, гриби муер, олія кунжутна, яйце куряче, порей, ананас, кімчі, шпинат, помідори, биті огірки, перець чилі, часник, імбир, кінза, цибуля, лайм, паростки бобів Мунг, м'ята, соус соєвий, соус світчілі",
       "imagePath": "https://la.ua/wp-content/uploads/2026/02/smazhenyj-rys-z-krevetkamy_papper.jpg",
       "id": "M1Z2bSr"
+    },
+    {
+      "name": "Удон з куркою",
+      "category": "asian",
+      "proteins": "6.2",
+      "carbohydrates": "15.5",
+      "fats": "7.7",
+      "caloricContent": "155",
+      "size": "",
+      "weight": "450",
+      "price": "320",
+      "description": "локшина удон, бульйон, філе куряче, суміш овочева, гриби муер, олія кунжутна, порей, кабачок, смажений арахіс, шпинат, помідори, биті огірки, перець чилі, часник, імбир, кінза, цибуля, перець чорний, паста гочуджан, соус теріякі",
+      "imagePath": "https://la.ua/wp-content/uploads/2026/02/lokshyna-z-kurkoyu_papper.jpg",
+      "id": "ieZ92os"
+    },
+    {
+      "name": "Удон з креветкою",
+      "category": "asian",
+      "proteins": "6.8",
+      "carbohydrates": "19.1",
+      "fats": "8.2",
+      "caloricContent": "177",
+      "size": "",
+      "weight": "435",
+      "price": "340",
+      "description": "локшина удон, бульйон, креветки, гриби муер, олія кунжутна, порей, кімчі, шпинат, помідори, биті огірки, перець чилі, часник, імбир, кінза, цибуля, лайм, паростки бобів Мунг, м'ята, соус теріякі",
+      "imagePath": "https://la.ua/wp-content/uploads/2026/02/lokshyna-z-krevetkamy_papper.jpg",
+      "id": "_DyJszG"
+    },
+    {
+      "name": "Рамен зі свининою",
+      "category": "asian",
+      "proteins": "4.4",
+      "carbohydrates": "6.4",
+      "fats": "7.8",
+      "caloricContent": "112",
+      "size": "",
+      "weight": "475",
+      "price": "295",
+      "description": "локшина яєчна, бульйон, свинина, бекон, водорості Вакаме, водорості Норі, яйце куряче, сало копчене, кімчі, кукурудза, цибуля, часник, суміш Фурікаке, прянощі, соус соєвий",
+      "imagePath": "https://la.ua/wp-content/uploads/2026/02/ramen-shoyu-zi-svynynoyu_papper1.jpg",
+      "id": "xhQtKBL"
+    },
+    {
+      "name": "Рамен Місо",
+      "category": "asian",
+      "proteins": "5.9",
+      "carbohydrates": "6.3",
+      "fats": "4.7",
+      "caloricContent": "89",
+      "size": "",
+      "weight": "520",
+      "price": "310",
+      "description": "локшина яєчна, бульйон, філе куряче, паста місо, кокосове молоко, водорості Хондаші, водорості Вакаме, водорості Норі, яйце куряче, сало копчене, гриби муер, гриби печериці, кукурудза, цибуля, часник, суміш Фурікаке, прянощ",
+      "imagePath": "https://la.ua/wp-content/uploads/2026/02/ramen-miso.jpg",
+      "id": "gfJAmJX"
+    },
+    {
+      "name": "Том ям",
+      "category": "asian",
+      "proteins": "4.7",
+      "carbohydrates": "8.1",
+      "fats": "6.1",
+      "caloricContent": "106",
+      "size": "",
+      "weight": "595",
+      "price": "370",
+      "description": "рис, бульйон, креветки, паста том ям, кокосове молоко, порей, гриби печериці, кабачок, помідори, паростки бобів Мунг, лайм, кінза, м'ята, рибний соус",
+      "imagePath": "https://la.ua/wp-content/uploads/2026/02/tom-yam_papper.jpg",
+      "id": "t898XQR"
+    },
+    {
+      "name": "Сандра",
+      "category": "pizza-romana",
+      "proteins": "13.1",
+      "carbohydrates": "29.5",
+      "fats": "12.6",
+      "caloricContent": "281",
+      "size": "30",
+      "weight": "385",
+      "price": "230",
+      "description": "соус бешамель, сир моцарела, сир лазур, сир гауда, сир пекоріно, горіх волоський",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/03/sandra.png",
+      "id": "AiWip0w"
+    },
+    {
+      "name": "Матіас",
+      "category": "pizza-romana",
+      "proteins": "10.8",
+      "carbohydrates": "28.5",
+      "fats": "9.6",
+      "caloricContent": "241",
+      "size": "30",
+      "weight": "520",
+      "price": "190",
+      "description": "соус кисло-солодкий, сир моцарела, пепероні, помідор, баварські ковбаски, кукурудза маринована, сир пармезан",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/03/matias.png",
+      "id": "fo3ezhm"
+    },
+    {
+      "name": "Скарлетт",
+      "category": "pizza-romana",
+      "proteins": "12.5",
+      "carbohydrates": "26.8",
+      "fats": "11.1",
+      "caloricContent": "255",
+      "size": "30",
+      "weight": "510",
+      "price": "230",
+      "description": "соус томатний, сир моцарела, бекон, баварські ковбаски, сир гауда, огірки мариновані",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/03/skarlett.png",
+      "id": "lKnyB6X"
+    },
+    {
+      "name": "Біг Батько",
+      "category": "burgers",
+      "proteins": "12.6",
+      "carbohydrates": "17.4",
+      "fats": "23.9",
+      "caloricContent": "338",
+      "size": "",
+      "weight": "370",
+      "price": "350",
+      "description": "булка, соус Бургер (містить алергени: яйце куряче, гірчиця), котлета із яловичини та курятини, цибуля карамелізована, бекон смажений, куряче яйце, огірок квашений, помідор, рукола",
+      "imagePath": "https://la.ua/wp-content/uploads/2022/06/big-batko-1.jpg",
+      "id": "vkoe2Ca"
+    },
+    {
+      "name": "Shabo Original Collection червоне",
+      "category": "alcohol-drink",
+      "proteins": "",
+      "carbohydrates": "",
+      "fats": "",
+      "caloricContent": "",
+      "size": "",
+      "weight": "",
+      "price": "295",
+      "description": "червоне, напівсолодке, вміст алкоголю: 11,7%, Україна, Одеська обл.",
+      "imagePath": "https://la.ua/wp-content/uploads/2025/07/shabo-original-collection-chervone.jpg",
+      "id": "eMWIO10"
+    },
+    {
+      "name": "Villa Italia Pinot Grigio IGP",
+      "category": "alcohol-drink",
+      "proteins": "",
+      "carbohydrates": "",
+      "fats": "",
+      "caloricContent": "",
+      "size": "",
+      "weight": "",
+      "price": "390",
+      "description": "біле, сухе, вміст алкоголю: 11,5%, Італія, Венето",
+      "imagePath": "https://la.ua/wp-content/uploads/2024/12/villa-italia-pinot-grigio.jpg",
+      "id": "QHkOIFS"
+    },
+    {
+      "name": "Leleka Wines Sukholimanskiy",
+      "category": "alcohol-drink",
+      "proteins": "",
+      "carbohydrates": "",
+      "fats": "",
+      "caloricContent": "",
+      "size": "",
+      "weight": "",
+      "price": "375",
+      "description": "біле, сухе, вміст алкоголю: 11,8%, Україна, Одеська обл.",
+      "imagePath": "https://la.ua/wp-content/uploads/2024/04/7-1.jpg",
+      "id": "4I2fnrc"
     }
   ],
   "categories": [
@@ -509,6 +667,38 @@
       "imagePath": "https://la.ua/wp-content/uploads/2021/08/dn-akcziya2-goryzont.jpg",
       "description": "Святкуйте свій День народження з “LA П’ЄЦ” та отримуйте три піци або два роли у подарунок!\n\nУмови акції:\n– Під подарунком мається на увазі безкоштовний “Святковий набір” з трьох піц: Капрічоза, Салямі та Маргарита або двох ролів: Каліфорнійські з лососем та Філадельфія з креветкою. Вміст набору є незмінним.\n– Мінімальна сума замовлення має складати 900 грн.\n– Акцією може скористатися кожен клієнт в день свого народження та протягом 7-ми днів після нього.\n– Дана акція не поєднується з іншими акціями.",
       "id": "GjvasCg"
+    }
+  ],
+  "vacancies": [
+    {
+      "path": "https://www.work.ua/jobs/7790034/",
+      "description": "Автокур'єр з власним авто,\n40 000 – 50 000 грн",
+      "id": 1
+    },
+    {
+      "path": "https://www.work.ua/jobs/5669336/",
+      "description": "Адміністратор закладу доставки,\n25 000 – 28 000 грн",
+      "id": 2
+    },
+    {
+      "path": "https://www.work.ua/jobs/7209562/",
+      "description": "Кухар сніданків, ланчів,\n31 000 грн",
+      "id": 3
+    },
+    {
+      "path": "https://www.work.ua/jobs/7708842/",
+      "description": "Майстер з ремонту та технічного обслуговування,\n29 000 – 32 000 грн\n145 грн/година",
+      "id": 4
+    },
+    {
+      "path": "https://www.work.ua/jobs/7079314/",
+      "description": "Мотокур'єр на транспорт компанії,\n35 000 – 38 000 грн",
+      "id": 5
+    },
+    {
+      "path": "https://www.work.ua/jobs/7385818/",
+      "description": "Помічник адміністратора закладу доставки,\n22 000 – 25 000 грн",
+      "id": 6
     }
   ],
   "cart": [],

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { useGetCategoriesQuery } from "../../../store/categorySlice/categorySlice";
 import AutoplayCarousel from "./Carusel";
 const Home = () => {
+    document.title = `ᐅᐅДоставка піци Львів✔до 29 хв | LA П’ЄЦ нормальна доставка їжі нормальна доставка їжі`;
     // Отримуємо категорії та стани запиту
     const { data: categories = [], isLoading, isError } = useGetCategoriesQuery();
 
