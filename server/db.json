@@ -13,20 +13,6 @@
   ],
   "products": [
     {
-      "name": "Капрічоза",
-      "category": "pizza",
-      "proteins": "13",
-      "carbohydrates": "26.6",
-      "fats": "6.9",
-      "caloricContent": "224",
-      "size": "30",
-      "weight": "450",
-      "price": "240",
-      "description": "соус томатний, сир моцарела, шинка, свіжі гриби!",
-      "imagePath": "https://la.ua/wp-content/uploads/2021/08/kaprichoza.jpg",
-      "id": "UqN-x6JJPE0"
-    },
-    {
       "name": "Салямі",
       "category": "pizza",
       "proteins": "14.1",
@@ -53,20 +39,6 @@
       "description": "соус бешамель, сир моцарела, сир лазур, моцарела міні, груша, волоський горіх, пармезан",
       "imagePath": "https://la.ua/wp-content/uploads/2021/08/kvafrik2.jpg",
       "id": "4dtyvID"
-    },
-    {
-      "name": "Антоніо",
-      "category": "pizza-romana",
-      "proteins": "10.3",
-      "carbohydrates": "28.6",
-      "fats": "8",
-      "caloricContent": "224",
-      "size": "30",
-      "weight": "485",
-      "price": "190",
-      "description": "соус томатний, сир моцарела, шинка, салямі, гриби печериці",
-      "imagePath": "https://la.ua/wp-content/uploads/2025/03/antonio.png",
-      "id": "b-JsA2p"
     },
     {
       "name": "Салат з буряка",
@@ -515,6 +487,20 @@
       "description": "біле, сухе, вміст алкоголю: 11,8%, Україна, Одеська обл.",
       "imagePath": "https://la.ua/wp-content/uploads/2024/04/7-1.jpg",
       "id": "4I2fnrc"
+    },
+    {
+      "name": "Піца La П’єц",
+      "category": "pizza",
+      "proteins": "14.7",
+      "carbohydrates": "26.2",
+      "fats": "10.1",
+      "caloricContent": "258",
+      "size": "30",
+      "weight": "450",
+      "price": "345",
+      "description": "соус томатний, сир моцарела, шинка, баварські ковбаски, ковбаса салямі, прошуто",
+      "imagePath": "https://la.ua/wp-content/uploads/2021/08/la-pyecz.jpg",
+      "id": "2mSG4fT"
     }
   ],
   "categories": [

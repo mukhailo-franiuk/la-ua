@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
-import { useDeleteLoginUsersMutation } from "../../store/usersSlice/usersSlice";
 const UsersPanel = () => {
-    const [deleteUser] = useDeleteLoginUsersMutation();
+
     const localUser = JSON.parse(localStorage.getItem('user'));
-    const delUser = async (id) => {
-        await deleteUser(id).unwrap();
-    }
+    
     return (
         <div>
             <div className="flex items-center justify-between px-4 md:px-8 border-b border-gray-300 py-3 bg-yellow-400 transition-all duration-300">
@@ -17,7 +14,6 @@ const UsersPanel = () => {
                     <button
                         className='border rounded-full text-sm px-4 py-1'
                         onClick={() => {
-                            delUser(localUser.id);
                             localStorage.removeItem("user");
                             window.location.replace('/');
                         }}

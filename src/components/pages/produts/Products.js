@@ -18,8 +18,8 @@ const AllProducts = ({ id, description, title, price, quantity }) => {
             if (item.category === category.path) {
                 document.title = `${category.name} | LA П’ЄЦ нормальна доставка їжі нормальна доставка їжі`;
             }
-    }); 
-});
+        });
+    });
     if (isLoading) return <div>Завантаження...</div>;
     if (isError) return <div>Помилка завантаження товарів</div>;
     const handleAddToCart = (product) => {
@@ -29,10 +29,16 @@ const AllProducts = ({ id, description, title, price, quantity }) => {
         // 2. Обов'язково перевіряємо, чи це дійсно масив. Якщо ні — створюємо новий []
         const currentCart = Array.isArray(rawData) ? rawData : [];
 
-        // 3. Тепер спрід-оператор [...] спрацює без помилок
-        const updatedCart = [...currentCart, product];
+        // 3. Перевіряємо, чи продукт вже є у кошику за його id
+        const isProductInCart = currentCart.some(item => item.id === product.id);
 
-        // 4. Зберігаємо назад
+        if (isProductInCart) {
+            toast.error('Цей товар уже додано до кошика!');
+            return; // Перериваємо виконання функції
+        }
+
+        // 4. Якщо товару немає, додаємо його та оновлюємо сторінку
+        const updatedCart = [...currentCart, product];
         localStorage.setItem('myCollection', JSON.stringify(updatedCart));
         window.location.reload();
     };
@@ -177,8 +183,6 @@ const AllProducts = ({ id, description, title, price, quantity }) => {
                                         className="w-full py-3.5 font-medium bg-yellow-400 text-gray-900 hover:bg-yellow-500 transition cursor-pointer rounded-lg text-center shadow-md focus:outline-none"
                                         onClick={() => {
                                             handleAddToCart({ id: selectedProduct.id, name: selectedProduct.name, description: selectedProduct.description, price: selectedProduct.price, imagePath: selectedProduct.imagePath, quantity: 1 });
-
-                                            toast.success('Товар добавлено в кошик!');
                                             setSelectedProduct(null);
                                         }}
                                     >

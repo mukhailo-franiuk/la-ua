@@ -30,7 +30,7 @@ const AddProduct = (props) => {
         props.closeModal();
     }
     return (
-        <div className="relative w-1/4 h-screen  p-4 overflow-y-auto bg-gray-900">
+        <div className="relative w-full lg:w-1/4 h-screen  p-4 overflow-y-auto bg-gray-900">
             <h5 className="inline-flex items-center mb-6 text-sm font-semibold text-gray-500 uppercase w-full">Добавити продукт</h5>
             <button
                 type="button"
@@ -49,7 +49,7 @@ const AddProduct = (props) => {
                             name="title"
                             id="name"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Type product name"
+                            placeholder="Назва продукту"
                             {...register('name', {required:true})}
                         />
                     </div>
@@ -60,7 +60,7 @@ const AddProduct = (props) => {
                             name="proteins"
                             id="proteins"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Type product name"
+                            placeholder="Білки"
                             {...register('proteins')}
                         />
                     </div>
@@ -71,7 +71,7 @@ const AddProduct = (props) => {
                             name="carbohydrates"
                             id="carbohydrates"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Type product name"
+                            placeholder="Вуглеводи"
                             {...register('carbohydrates')}
                         />
                     </div>
@@ -82,7 +82,7 @@ const AddProduct = (props) => {
                             name="fats"
                             id="fats"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Type product name"
+                            placeholder="Жири"
                             {...register('fats')}
                         />
                     </div>
@@ -93,7 +93,7 @@ const AddProduct = (props) => {
                             name="caloricContent"
                             id="caloricContent"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Type product name"
+                            placeholder="Калоріїність"
                             {...register('caloricContent')}
                         />
                     </div>
@@ -104,7 +104,7 @@ const AddProduct = (props) => {
                             name="size"
                             id="size"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Type product name"
+                            placeholder="Розмір"
                             {...register('size')}
                         />
                     </div>
@@ -115,7 +115,7 @@ const AddProduct = (props) => {
                             name="weight"
                             id="weight"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Type product name"
+                            placeholder="Вага"
                             {...register('weight')}
                         />
                     </div>
@@ -126,7 +126,7 @@ const AddProduct = (props) => {
                             name="imagePath"
                             id="imagePath"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Product brand"
+                            placeholder="Шлях до зображення"
                             {...register('imagePath', { required: true })}
                         />
                     </div>
@@ -137,7 +137,7 @@ const AddProduct = (props) => {
                             name="price"
                             id="price"
                             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="$2999"
+                            placeholder="Ціна"
                             {...register('price', { required: true })}
                         />
                     </div>
@@ -161,7 +161,7 @@ const AddProduct = (props) => {
                             id="description"
                             rows="8"
                             className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                            placeholder="Enter event description here"
+                            placeholder="Опис продукту"
                             {...register('description', { required: true })}
                         ></textarea>
                     </div>

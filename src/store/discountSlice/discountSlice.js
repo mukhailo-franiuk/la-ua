@@ -22,6 +22,33 @@ export const discountApi = createApi({
             }),
             invalidatesTags: [{ type: 'Discounts', id: 'LIST' }]
         }),
+        updateDiscount: build.mutation({
+            query: ({ id, ...patch }) => ({
+                url: `discounts/${id}`,
+                method: 'PATCH',
+                body: patch,
+            }),
+            // Оптимістичне оновлення кешу
+            async onQueryStarted({ id, ...patch }, { dispatch, queryFulfilled }) {
+                // Оновлюємо кеш для ендпоінту getDiscounts
+                const patchResult = dispatch(
+                    discountApi.util.updateQueryData('getDiscounts', undefined, (draft) => {
+                        // Знаходимо дисконт у кеші та оновлюємо його поля
+                        const discount = draft.find((d) => d.id === id);
+                        if (discount) {
+                            Object.assign(discount, patch);
+                        }
+                    })
+                );
+                try {
+                    // Чекаємо завершення запиту на сервері
+                    await queryFulfilled;
+                } catch {
+                    // Якщо сервер повернув помилку, скасовуємо зміни у кеші
+                    patchResult.undo();
+                }
+            },
+        }),
         deleteDiscount: build.mutation({
             query: (id) => ({
                 url: `discounts/${id}`,
@@ -31,4 +58,4 @@ export const discountApi = createApi({
         })
     })
 });
-export const { useGetDiscountsQuery , useAddDiscountMutation , useDeleteDiscountMutation } = discountApi;
+export const { useGetDiscountsQuery , useAddDiscountMutation , useUpdateDiscountMutation , useDeleteDiscountMutation } = discountApi;

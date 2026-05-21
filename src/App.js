@@ -24,6 +24,7 @@ import Products from "./components/admin-panel/pages/products/Products";
 import DiscountAdmin from "./components/admin-panel/pages/discount/Discount";
 import Categories from "./components/admin-panel/pages/categories/Categories";
 import VacanciesAdmin from "./components/admin-panel/pages/vacancies/VacanciesAdmin";
+import Users from "./components/admin-panel/pages/users/UsersList";
 // Users panel
 import UsersPanel from "./components/users-panel/UsersPanel";
 // Import protection component
@@ -58,6 +59,7 @@ const App = () => {
               <Route path="discount" element={<DiscountAdmin />} />
               <Route path="categories" element={<Categories />} />
               <Route path="vacancies" element={<VacanciesAdmin />} />
+              <Route path="users-list" element={<Users />} />
             </Route>
           </Route>
 
