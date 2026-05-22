@@ -12,7 +12,6 @@ const AllProducts = ({ id, description, title, price, quantity }) => {
     const filteredProducts = products.filter(
         (item) => item.category === categoryParam
     );
-    console.log(categories.name);
     filteredProducts.map((item) => {
         categories.map((category) => {
             if (item.category === category.path) {

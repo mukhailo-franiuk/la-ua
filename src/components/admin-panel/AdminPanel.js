@@ -1,8 +1,12 @@
-import { NavLink, Link, Outlet } from "react-router-dom";
+import { NavLink, Link, Outlet, data } from "react-router-dom";
 import { useState } from "react";
+import { useGetCartQuery } from "../../store/cartSlice/cartSlice";
 
 const AdminPanel = () => {
     document.title = `Панель адміністрування - LA П’ЄЦ нормальна доставка їжі у Львові`;
+    const { data: cart = [], isLoading, isError } = useGetCartQuery();
+
+    console.log(cart);
     const [isOpenNav, setIsOpenNav] = useState(false);
     const [isOpenListLinks, setIsOpenListLinks] = useState(false);
     const [isOpenNotifications, setIsOpenNotifications] = useState(false);
@@ -21,11 +25,11 @@ const AdminPanel = () => {
     const localUser = JSON.parse(localStorage.getItem('user'));
     return (
         <div className="antialiased bg-gray-100 ">
-            <nav className="bg-gray-600 border-b border-gray-200 px-4 py-2.5 fixed left-0 right-0 top-0 z-50">
+            <nav className="bg-gray-100 border-b border-gray-200 px-4 py-2.5 fixed left-0 right-0 top-0 z-50">
                 <div className="flex flex-wrap justify-between items-center">
                     <div className="flex justify-start items-center">
                         <button
-                            className="p-2 mr-2 text-gray-600 rounded-lg cursor-pointer md:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                            className="p-2 mr-2 text-gray-600 rounded-lg cursor-pointer md:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100  focus:ring-2 focus:ring-gray-100 "
                         >
                             <svg
                                 aria-hidden="true"
@@ -67,7 +71,7 @@ const AdminPanel = () => {
                         <button
                             type="button"
 
-                            className="p-2 mr-1 text-gray-500 rounded-lg md:hidden hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                            className="p-2 mr-1 text-gray-500 rounded-lg md:hidden hover:text-gray-900 hover:bg-gray-100 focus:ring-4 focus:ring-gray-300"
                         >
                             <span className="sr-only">Toggle search</span>
                             <svg aria-hidden="true" className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -77,7 +81,7 @@ const AdminPanel = () => {
                         {/* Notifications  */}
                         <button
                             type="button"
-                            className="p-2 mr-1 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                            className="p-2 mr-1 text-gray-600 rounded-lg hover:text-gray-900 hover:bg-gray-400 focus:ring-4 focus:ring-gray-300"
                             onClick={() => {
                                 setIsOpenNotifications(!isOpenNotifications)
                                 setIsOpenOptions(false);
@@ -98,70 +102,42 @@ const AdminPanel = () => {
                             </svg>
                         </button>
                         {/* Dropdown menu  */}
-                        <div
-                            className={`overflow-hidden absolute right-0 top-full z-50 my-4 max-w-sm text-base list-none bg-white divide-y divide-gray-100 shadow-lg dark:divide-gray-600 dark:bg-gray-700 rounded-xl ${isOpenNotifications ? 'block' : 'hidden'}`}
+                        <div className={`overflow-hidden absolute right-5 top-full z-50 my-4 max-w-sm text-base list-none bg-white divide-y divide-gray-100 shadow-lg rounded-xl ${isOpenNotifications ? 'block' : 'hidden'}`}>
 
-                        >
                             <div
-                                className="block py-2 px-4 text-base font-medium text-center text-gray-700 bg-gray-50 dark:bg-gray-600 dark:text-gray-300"
+                                className=" flex flex-col py-2 px-4 text-base font-medium text-center text-gray-700 bg-yellow-400"
                             >
-                                Notifications
+                                Замовлення
                             </div>
-                            <div>
-                                <a
-                                    href="#"
-                                    className="flex py-3 px-4 border-b hover:bg-gray-100 dark:hover:bg-gray-600 dark:border-gray-600"
-                                >
-                                    <div className="flex-shrink-0">
-                                        <img
-                                            className="w-11 h-11 rounded-full"
-                                            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
-                                            alt="Bonnie Green avatar"
-                                        />
-                                        <div
-                                            className="flex absolute justify-center items-center ml-6 -mt-5 w-5 h-5 rounded-full border border-white bg-primary-700 dark:border-gray-700"
-                                        >
-                                            <svg
-                                                aria-hidden="true"
-                                                className="w-3 h-3 text-white"
-                                                fill="currentColor"
-                                                viewBox="0 0 20 20"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"
-                                                ></path>
-                                                <path
-                                                    d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"
-                                                ></path>
-                                            </svg>
+                            {cart.length === 0 ? (
+                                <p className="p-3">Зараз у списку немає замовлень!!!</p>
+                            ) : (
+                                [...cart]
+                                    // Сортування за часом: b.time порівнюється з a.time (від пізніших до раніших)
+                                    .sort((a, b) => (b.time || "").localeCompare(a.time || ""))
+                                    .slice(0, 3)
+                                    .map(item => (
+                                        <div key={item.id} className="p-3 hover:bg-yellow-200 hover:cursor-pointer">
+                                            <p>
+                                                Замовлення від <strong>{item.customer?.fullName || 'Анонім'}</strong>,
+                                                На суму - {item.total?.toFixed(2) || '0.00'} грн.
+                                            </p>
+                                            {/* Виводимо і дату, і час */}
+                                            <span className="text-[12px]">{item.date} о {item.time}</span>
                                         </div>
-                                    </div>
-                                    <div className="pl-3 w-full">
-                                        <div
-                                            className="text-gray-500 font-normal text-sm mb-1.5 dark:text-gray-400"
-                                        >
-                                            New message from
-                                            <span className="font-semibold text-gray-900 dark:text-white"
-                                            >Bonnie Green</span
-                                            >: "Hey, what's up? All set for the presentation?"
-                                        </div>
-                                        <div
-                                            className="text-xs font-medium text-primary-600 dark:text-primary-500"
-                                        >
-                                            a few moments ago
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
+                                    ))
+                            )}
+
+
+
                             <a
                                 href="#"
-                                className="block py-2 text-md font-medium text-center text-gray-900 bg-gray-50 hover:bg-gray-100 dark:bg-gray-600 dark:text-white dark:hover:underline"
+                                className="block py-2 text-md font-medium text-center text-gray-900 bg-yellow-400 hover:bg-yellow-500"
                             >
                                 <div className="inline-flex items-center">
                                     <svg
                                         aria-hidden="true"
-                                        className="mr-2 w-4 h-4 text-gray-500 dark:text-gray-400"
+                                        className="mr-2 w-4 h-4 text-gray-500 "
                                         fill="currentColor"
                                         viewBox="0 0 20 20"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -173,14 +149,14 @@ const AdminPanel = () => {
                                             clipRule="evenodd"
                                         ></path>
                                     </svg>
-                                    View all
+                                    Дивитися усі
                                 </div>
                             </a>
                         </div>
                         {/* Apps  */}
                         <button
                             type="button"
-                            className="p-2 text-gray-500 rounded-lg hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+                            className="p-2 text-gray-600 rounded-lg hover:text-gray-900 hover:bg-gray-400 focus:ring-4 focus:ring-gray-300 "
                             onClick={() => {
                                 setIsOpenNotifications(false);
                                 setIsOpenOptions(!isOpenOptions)
@@ -201,22 +177,22 @@ const AdminPanel = () => {
                         </button>
                         {/* Dropdown menu  */}
                         <div
-                            className={`overflow-hidden absolute top-full right-0 z-50 my-4 max-w-sm text-base list-none bg-white divide-y divide-gray-100 shadow-lg dark:bg-gray-700 dark:divide-gray-600 rounded-xl ${isOpenOptions ? 'block' : 'hidden'}`}
+                            className={`overflow-hidden absolute top-full right-0 lg:right-5 z-50 my-4 max-w-sm text-base list-none bg-white divide-y divide-gray-100 shadow-lg rounded-xl ${isOpenOptions ? 'block' : 'hidden'}`}
                             id="apps-dropdown"
                         >
                             <div
-                                className="block py-2 px-4 text-base font-medium text-center text-gray-700 bg-gray-50 dark:bg-gray-600 dark:text-gray-300"
+                                className="block py-2 px-4 text-base font-medium text-center text-gray-700 bg-yellow-400 "
                             >
-                                Apps
+                                Опції
                             </div>
                             <div className="grid grid-cols-3 gap-4 p-4">
                                 <a
                                     href="#"
-                                    className="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group"
+                                    className="block p-4 text-center rounded-lg hover:bg-yellow-400 group"
                                 >
                                     <svg
                                         aria-hidden="true"
-                                        className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 dark:text-gray-400 dark:group-hover:text-gray-400"
+                                        className="mx-auto mb-1 w-7 h-7 text-gray-400 group-hover:text-gray-500 "
                                         fill="currentColor"
                                         viewBox="0 0 20 20"
                                         xmlns="http://www.w3.org/2000/svg"
@@ -231,7 +207,7 @@ const AdminPanel = () => {
                                 </a>
                                 <Link
                                     to={`users-list`}
-                                    className="block p-4 text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 group"
+                                    className="block p-4 text-center rounded-lg hover:bg-yellow-400  group"
                                     onClick={() => {
                                         setIsOpenOptions(false);
                                     }}
@@ -391,11 +367,12 @@ const AdminPanel = () => {
                 </div>
             </nav>
 
+
             {/*  Sidebar  */}
 
-            <aside
+            < aside
                 className="fixed top-0 left-0 z-40 w-64 h-screen pt-14 transition-transform -translate-x-full bg-white border-r border-gray-200 md:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
-                aria-label="Sidenav"
+
                 id="drawer-navigation"
             >
                 <div className="overflow-y-auto py-5 px-3 h-full bg-gray-600">
@@ -710,12 +687,12 @@ const AdminPanel = () => {
 
                     {/* Dropdown  */}
                 </div>
-            </aside>
+            </aside >
 
             <main className="p-4 md:ml-64 h-auto pt-2">
                 <Outlet />
             </main>
-        </div>
+        </div >
     )
 }
 export default AdminPanel;

@@ -690,16 +690,16 @@
   "cart": [
     {
       "customer": {
-        "fullName": "Bob John",
-        "phone": "+380990000000"
+        "fullName": "Max",
+        "phone": "+380976543665"
       },
       "items": [
         {
-          "id": "08V4j2F",
-          "name": "Маргарита",
-          "description": "соус томатний, сир моцарела, помідори",
-          "price": "175",
-          "imagePath": "https://la.ua/wp-content/uploads/2021/08/margaryta4.jpg",
+          "id": "lQk60_U",
+          "name": "Салямі",
+          "description": "соус томатний, сир моцарела, ковбаса салямі",
+          "price": "240",
+          "imagePath": "https://la.ua/wp-content/uploads/2021/08/salami.jpg",
           "quantity": 1
         },
         {
@@ -711,9 +711,77 @@
           "quantity": 1
         }
       ],
-      "total": 550,
-      "numOrder": "#RuOkpg4B",
+      "total": 615,
+      "numOrder": "#st520gTR",
+      "time": "15:52",
+      "date": "5/4/2026",
       "id": 1
+    },
+    {
+      "customer": {
+        "fullName": "mukhailo",
+        "phone": "+380974243588"
+      },
+      "items": [
+        {
+          "id": "yiUaO7v",
+          "name": "Салат з буряка",
+          "description": "буряк, цибуля, оцет, олія соняшникова",
+          "price": "100",
+          "imagePath": "https://la.ua/wp-content/uploads/2026/05/salat-z-buryachka.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "xfMQ9Cj",
+          "name": "Егейський",
+          "description": "помідор, огірок, оливки, перець болгарський, цибуля синя, сир фета, медово-гірчичний соус, мікс салату",
+          "price": "110",
+          "imagePath": "https://la.ua/wp-content/uploads/2024/05/egejskyj-1.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "NiesEM3",
+          "name": "Shabo Original Collection біле",
+          "description": "біле, напівсолодке, вміст алкоголю: 11,7%, Україна, Одеська обл.",
+          "price": "295",
+          "imagePath": "https://la.ua/wp-content/uploads/2025/07/shabo-original-collection-bile.jpg",
+          "quantity": 1
+        }
+      ],
+      "total": 505,
+      "numOrder": "#tso9aVx5",
+      "time": "15:53",
+      "date": "5/4/2026",
+      "id": 2
+    },
+    {
+      "customer": {
+        "fullName": "Ніна",
+        "phone": "+380971234567"
+      },
+      "items": [
+        {
+          "id": "hzKQXxW",
+          "name": "Смажений рис з куркою",
+          "description": "рис, філе куряче, гриби муер, олія кунжутна, порей, кабачок, суміш овочева, смажений арахіс, кімчі, шпинат, помідори, биті огірки, перець чилі, часник, імбир, цибуля, соус соєвий, соус світчілі",
+          "price": "310",
+          "imagePath": "https://la.ua/wp-content/uploads/2026/02/smazhenyj-rys-z-kurkoyu_papper.jpg",
+          "quantity": 2
+        },
+        {
+          "id": "2mSG4fT",
+          "name": "Піца La П’єц",
+          "description": "соус томатний, сир моцарела, шинка, баварські ковбаски, ковбаса салямі, прошуто",
+          "price": "345",
+          "imagePath": "https://la.ua/wp-content/uploads/2021/08/la-pyecz.jpg",
+          "quantity": 2
+        }
+      ],
+      "total": 1310,
+      "numOrder": "#1eEcrQOz",
+      "time": "15:57",
+      "date": "5/4/2026",
+      "id": 3
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

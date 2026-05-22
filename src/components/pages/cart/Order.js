@@ -6,7 +6,7 @@ const Order = () => {
     // Ініціалізація форми
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [addcart] = useAddCartMutation();
-
+    const date = new Date();
     // Завантажуємо товари з localStorage
     const orderItems = useMemo(() => {
         try {
@@ -88,7 +88,9 @@ const Order = () => {
             customer: data,
             items: orderItems,
             total: orderTotal,
-            numOrder: `#${generatePassword({length: 8, uppercase: true, lowercase: true, numbers: true})}`
+            numOrder: `#${generatePassword({length: 8, uppercase: true, lowercase: true, numbers: true})}`,
+            time:`${date.getHours()}:${date.getMinutes()}`,
+            date: `${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`
         };
         console.log('Дані замовлення для відправки:', orderData);
         // Тут викликайте вашу мутацію або API-запит
