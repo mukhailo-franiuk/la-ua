@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Toaster, toast } from 'react-hot-toast';
-
+import Order from './Order';
 const Cart = () => {
     document.title = `Кошик | LA П’ЄЦ нормальна доставка їжі нормальна доставка їжі`;
     const [isOpenAddCartForm, setIsOpenAddCartForm] = useState(false);
@@ -91,7 +91,10 @@ const Cart = () => {
                                                 <div className="flex items-center">
                                                     <button
                                                         type="button"
-                                                        onClick={() => handleUpdateQuantity(index, (item.quantity || 1) - 1)}
+                                                        onClick={() =>{
+                                                            window.location.reload();
+                                                            handleUpdateQuantity(index, (item.quantity || 1) - 1)
+                                                        }}
                                                         className="inline-flex h-5 w-5 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200"
                                                     >
                                                         -
@@ -101,7 +104,10 @@ const Cart = () => {
                                                     </span>
                                                     <button
                                                         type="button"
-                                                        onClick={() => handleUpdateQuantity(index, (item.quantity || 1) + 1)}
+                                                        onClick={() => {
+                                                            window.location.reload();
+                                                            handleUpdateQuantity(index, (item.quantity || 1) + 1)
+                                                        }}
                                                         className="inline-flex h-5 w-5 items-center justify-center rounded-md border border-gray-300 bg-gray-100 hover:bg-gray-200"
                                                     >
                                                         +
@@ -143,13 +149,21 @@ const Cart = () => {
                                         <dd className="text-base font-medium text-gray-900">{totalPrice.toFixed(2)} грн</dd>
                                     </dl>
                                 </div>
-                                <button className="flex w-full items-center justify-center rounded-lg bg-yellow-400 px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-yellow-500">
+                                <button 
+                                className="flex w-full items-center justify-center rounded-lg bg-yellow-400 px-5 py-2.5 text-sm font-medium text-gray-700 hover:bg-yellow-500"
+                                onClick={() => {
+                                    setIsOpenAddCartForm(true)
+                                }}
+                                >
                                     Оформити замовлення
                                 </button>
                             </div>
                         </div>
                     )}
                 </div>
+            </div>
+            <div className={`fixed z-50 w-full top-0 left-0 h-screen flex flex-col items-baseline  text-sm shadow-xl md:grid-cols-3 transition-all duration-700 ease-in-out ${isOpenAddCartForm ? "translate-y-0" : "-translate-y-full"}`}>
+                <Order />
             </div>
         </section>
     );

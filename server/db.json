@@ -687,6 +687,34 @@
       "id": 6
     }
   ],
-  "cart": [],
+  "cart": [
+    {
+      "customer": {
+        "fullName": "Bob John",
+        "phone": "+380990000000"
+      },
+      "items": [
+        {
+          "id": "08V4j2F",
+          "name": "Маргарита",
+          "description": "соус томатний, сир моцарела, помідори",
+          "price": "175",
+          "imagePath": "https://la.ua/wp-content/uploads/2021/08/margaryta4.jpg",
+          "quantity": 1
+        },
+        {
+          "id": "4I2fnrc",
+          "name": "Leleka Wines Sukholimanskiy",
+          "description": "біле, сухе, вміст алкоголю: 11,8%, Україна, Одеська обл.",
+          "price": "375",
+          "imagePath": "https://la.ua/wp-content/uploads/2024/04/7-1.jpg",
+          "quantity": 1
+        }
+      ],
+      "total": 550,
+      "numOrder": "#RuOkpg4B",
+      "id": 1
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }
