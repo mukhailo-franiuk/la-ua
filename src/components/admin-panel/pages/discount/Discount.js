@@ -54,7 +54,7 @@ const DiscountAdmin = () => {
                 }}
             />
             <div className="mx-auto max-w-screen-xl px-4 lg:px-12">
-                <div className="bg-gray-800 relative shadow-md sm:rounded-lg">
+                <div className="bg-gray-50 relative shadow-md sm:rounded-lg">
                     <div className="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
                         <div className="w-full md:w-1/2">
                             <form className="flex items-center">
@@ -72,7 +72,7 @@ const DiscountAdmin = () => {
                         <div className="w-full md:w-auto flex flex-col md:flex-row space-y-2 md:space-y-0 items-stretch md:items-center justify-end md:space-x-3 flex-shrink-0">
                             <button
                                 type="button"
-                                className="flex items-center justify-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
+                                className="flex items-center justify-center text-gray-900 hover:text-white  hover:bg-yellow-400 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2"
                                 onClick={() => setIsOpenAddDiscountForm(true)}
                             >
                                 <svg className="h-3.5 w-3.5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">

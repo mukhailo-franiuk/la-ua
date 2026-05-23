@@ -162,8 +162,8 @@ const Cart = () => {
                     )}
                 </div>
             </div>
-            <div className={`fixed z-50 w-full top-0 left-0 h-screen flex flex-col items-baseline  text-sm shadow-xl md:grid-cols-3 transition-all duration-700 ease-in-out ${isOpenAddCartForm ? "translate-y-0" : "-translate-y-full"}`}>
-                <Order />
+            <div className={`fixed z-50 w-full top-0 left-0 h-full overflow-scroll flex flex-col items-baseline  text-sm shadow-xl md:grid-cols-3 transition-all duration-700 ease-in-out ${isOpenAddCartForm ? "translate-y-0" : "-translate-y-full"}`}>
+                <Order closeAddCart={setIsOpenAddCartForm}/>
             </div>
         </section>
     );

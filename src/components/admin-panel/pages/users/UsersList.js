@@ -36,7 +36,7 @@ const UsersList = () => {
                     },
                 }}
             />
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4.5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4.5 bg-gray-50 p-5 rounded-lg">
                 {/* Card  */}
                 {users.map((user) => (
                     <div className="flex items-center p-2 border border-black/10 hover:border-black/20 transition-colors rounded-xl w-sm sm:w-[420px] relative" key={user.id}>

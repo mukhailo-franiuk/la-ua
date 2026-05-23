@@ -19,7 +19,7 @@ import Payment from "./components/pages/payment/Payment";
 import Vacancies from "./components/pages/vacancies/Vacancies";
 // Admin panel
 import AdminPanel from "./components/admin-panel/AdminPanel";
-import AllInfo from "./components/admin-panel/pages/all-information/AllInfo";
+import OrdersInWork from "./components/admin-panel/pages/all-information/AllInfo";
 import Products from "./components/admin-panel/pages/products/Products";
 import DiscountAdmin from "./components/admin-panel/pages/discount/Discount";
 import Categories from "./components/admin-panel/pages/categories/Categories";
@@ -54,7 +54,7 @@ const App = () => {
           {/* ЗАХИЩЕНІ МАРШРУТИ ДЛЯ АДМІНІСТРАТОРА */}
           <Route element={<ProtectedRoute allowedRoles={["admin"]} />}>
             <Route path="/admin" element={<AdminPanel />}>
-              <Route index element={<AllInfo />} />
+              <Route index element={<OrdersInWork />} />
               <Route path="products" element={<Products />} />
               <Route path="discount" element={<DiscountAdmin />} />
               <Route path="categories" element={<Categories />} />

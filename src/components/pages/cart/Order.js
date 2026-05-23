@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import { useForm } from 'react-hook-form';
 import { useAddCartMutation } from '../../../store/cartSlice/cartSlice';
 
-const Order = () => {
+const Order = (props) => {
     // Ініціалізація форми
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [addcart] = useAddCartMutation();
@@ -88,9 +88,10 @@ const Order = () => {
             customer: data,
             items: orderItems,
             total: orderTotal,
-            numOrder: `#${generatePassword({length: 8, uppercase: true, lowercase: true, numbers: true})}`,
-            time:`${date.getHours()}:${date.getMinutes()}`,
-            date: `${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`
+            numOrder: `#${generatePassword({ length: 8, uppercase: true, lowercase: true, numbers: true })}`,
+            time: `${date.getHours()}:${date.getMinutes()}`,
+            date: `${date.getDay()}/${date.getMonth()}/${date.getFullYear()}`,
+            statusRead: "not-read"
         };
         console.log('Дані замовлення для відправки:', orderData);
         // Тут викликайте вашу мутацію або API-запит
@@ -100,8 +101,16 @@ const Order = () => {
     };
 
     return (
-        <section className="py-8 antialiased md:py-16 w-full min-h-screen">
-            <div className="mx-auto max-w-screen-xl py-10 px-4 2xl:px-0 bg-gray-600 rounded-lg">
+        <section className="py-8 antialiased md:py-16 w-full min-h-full">
+
+            <div className="mx-auto max-w-screen-xl py-10 px-4 2xl:px-0 bg-yellow-400 rounded-lg relative">
+                <button
+                    onClick={() => props.closeAddCart(false)}
+                    type="button"
+                    className=" text-gray-900 absolute top-2.5 right-2.5 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+                    <svg aria-hidden="true" className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                    <span className="sr-only">Close modal</span>
+                </button>
                 <div className="mx-auto max-w-3xl">
                     <h2 className="text-xl font-semibold text-gray-900 dark:text-white sm:text-2xl mb-6">
                         Оформити замовлення
@@ -139,7 +148,8 @@ const Order = () => {
 
                     {/* Загальна сума та Форма даних клієнта */}
                     {orderItems.length > 0 && (
-                        <div className="mt-6">
+                        <div className="mt-6 relative ">
+
                             <div className="flex justify-between items-center text-xl font-bold text-white mb-6">
                                 <span>Загалом до сплати:</span>
                                 <span>{orderTotal} грн</span>
